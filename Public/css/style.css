@@ -1,0 +1,238 @@
+body {
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	color: #000;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #31CCE5;
+	text-decoration: none;
+}
+
+
+/* INDEX */
+
+#header_index {
+	background-image: url("../images/alaska.jpg");
+	background-size: cover;
+}
+
+#background_header_index {
+	color: #FFF;
+	height: 800px;
+	background-color: rgba(19, 107, 183, 0.5);
+}
+
+.link_index, .link_menu {
+	color: #FFF;
+}
+
+#titleIndex, h2 {
+	display: flex;
+	justify-content: center;
+}
+
+#titleIndex {
+	margin-top: 0px;
+	padding-top: 25%;
+	font-size: 3em;
+	text-align: center;
+	text-shadow: 2px 2px #000;
+}
+
+h2 {
+	color: #000;
+}
+
+#double_arrows {
+	font-size: 3em;
+	display: flex;
+	justify-content: center;
+	margin-top: 15%;
+}
+
+
+/* BOOK */
+
+#nav_book {
+	background-color: rgba(19, 107, 183, 0.9);
+	height: 50px;
+}
+
+#button_create {
+	/*display: flex;
+	justify-content: flex-end;
+	position: relative;
+	top: 70px;
+	right: 20px;*/
+	display: flex;
+	position: relative;
+	top: 70px;
+	left: 20px;
+	width: 30%;
+}
+
+.tickets {
+	border: 1px #000 solid;
+	width: 70%;
+	margin: auto;
+	margin-top: 10%;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.ticket_title {
+	display: flex;
+	justify-content: center;
+	padding-bottom: 20px;
+}
+
+.ticket_border {
+	border-bottom: 1px #000 solid;
+	width: 50%;
+	margin: auto;
+}
+
+
+
+
+.link_back_book {
+	position: relative;
+	top: 20px;
+}
+
+#ticket_book {
+	width: 80%;
+	margin: auto;
+}
+
+.modification_date_book {
+	text-align: right;
+	font-style: italic;
+	font-size: 0.8em;
+}
+
+
+
+/* MENU */
+
+.main_nav {
+	position: fixed;
+	width: 100%;
+}
+
+.nav_ul {
+	display: flex;
+	justify-content: center;
+	margin-top: 0;
+}
+
+.main_menu {
+	list-style: none;
+	padding: 15px;
+	text-align: center;
+	font-family: "arial";
+	text-shadow: 1px 1px #000;
+}
+
+#administration:hover #sub_menu_administration {
+	visibility: visible;
+}
+
+#sub_menu_administration {
+	display: flex;
+	flex-direction: column;
+	border: 1px #FFF solid;
+	border-radius: 5px;
+	background-color: #F5F9FC;
+	visibility: hidden;
+}
+
+#sub_menu_administration li {
+	list-style: none;
+	padding: 10px 40px 10px 0;
+	text-shadow: initial;
+}
+
+#sub_menu_administration li a {
+	color: #8B97A1;
+}
+
+#sub_menu_administration li a:hover {
+	color: #31CCE5;
+}
+
+
+
+/* FORM */
+
+h2 {
+    display: flex;
+    justify-content: center;
+}
+
+#registration_form, #connexion_form {
+    visibility: hidden;
+    position: fixed;
+    left: 12%;
+    z-index: 2;
+}
+
+#registration_form {
+    bottom: 50px;
+}
+
+#connexion_form {
+    bottom: 150px;
+}
+
+.form-group {
+	margin-bottom: 15px;
+}
+
+label {
+	margin-bottom: 14px;
+}
+
+input, input::-webkit-input-placeholder {
+    font-size: 9px;
+    padding-top: 3px;
+}
+
+.main-login{
+ 	background-color: #fff;
+    border: 1px #7D8082 solid;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 1);
+    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 1);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.5);
+}
+
+.main-center{
+ 	margin-top: 30px;
+ 	margin: 0 auto;
+ 	max-width: 330px;
+    padding: 40px 40px;
+}
+
+.login-button{
+	margin-top: 3px;
+}
+
+.login-register{
+	font-size: 8px;
+	text-align: center;
+}
+
+#closebtn {
+    color: #000;
+    font-size: 2em;
+    display: flex;
+    justify-content: flex-end;
+}
