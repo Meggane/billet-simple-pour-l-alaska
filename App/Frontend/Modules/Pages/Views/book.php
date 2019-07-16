@@ -1,6 +1,7 @@
 <?php
 $titlePage = "Livre";
 $titleSocialNetworks = "Billet simple pour l'Alaska - Livre";
+$bodyPage = "";
 
 ob_start();
 require_once __DIR__ . "/../../../../../Model/PDOFactory.php";
@@ -51,7 +52,7 @@ if (isset($_GET["id"])) {
         ?>
 
         <div class="tickets">
-            <h1><a class="ticket_title" href="book.php?id=<?= $ticket->id() ?>"><?= $ticket->title() ?></a></h1>
+            <h1><a class="ticket_title" href="../../Tickets/Views/show.php?id=<?= $ticket->id() ?>"><?= $ticket->title() ?></a></h1>
             <p class="ticket_border"></p>
             <p class="ticket_content"><?= nl2br($ticket->content()) ?></p>
             <p>

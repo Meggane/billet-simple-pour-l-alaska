@@ -44,7 +44,8 @@ class TicketsController {
             if ($ticket->isValid())
             {
                 $manager->save($ticket);
-                header("Location: /../../../../Frontend/Modules/Pages/Views/book.php");
+                header("Location: ../../Pages/Views/book.php");
+                exit();
             }
             else
             {
@@ -53,3 +54,6 @@ class TicketsController {
         }
     }
 }
+
+$ticketsController = new TicketsController("PDO", PDOFactory::getMysqlConnexion());
+$ticketsController->insertTicket();

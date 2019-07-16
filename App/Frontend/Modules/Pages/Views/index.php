@@ -1,6 +1,7 @@
 <?php
 $titlePage = "Accueil";
 $titleSocialNetworks = "Billet simple pour l'Alaska - Accueil";
+$bodyPage = "";
 
 ob_start();
 ?>

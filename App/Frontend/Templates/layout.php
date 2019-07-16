@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../../../../Public/css/style.css"> 
   </head>
   
-  <body>
+  <body class="<?= $bodyPage ?>">
     
     <?= $contentPage ?>
 
