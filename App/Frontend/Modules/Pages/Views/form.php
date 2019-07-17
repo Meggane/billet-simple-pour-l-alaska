@@ -19,4 +19,5 @@ include __DIR__ . "/../../../../Backend/Modules/Registration/Views/registration.
 <script type="text/javascript" src="../../../../../Public/bootstrap/js/bootstrap.js"></script>
 <script src="../../../../../Public/js/variables.js"></script>
 <script src="../../../../../Public/js/form.js"></script>
+<script src="../../../../../Public/js/menuAdministration.js"></script>
 <script src="../../../../../Public/js/fonctions.js"></script>

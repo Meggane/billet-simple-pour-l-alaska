@@ -64,11 +64,6 @@ h2 {
 }
 
 #button_create {
-	/*display: flex;
-	justify-content: flex-end;
-	position: relative;
-	top: 70px;
-	right: 20px;*/
 	display: flex;
 	position: relative;
 	top: 70px;
@@ -96,9 +91,6 @@ h2 {
 	width: 50%;
 	margin: auto;
 }
-
-
-
 
 .link_back_book {
 	position: relative;
@@ -137,10 +129,6 @@ h2 {
 	text-align: center;
 	font-family: "arial";
 	text-shadow: 1px 1px #000;
-}
-
-#administration:hover #sub_menu_administration {
-	visibility: visible;
 }
 
 #sub_menu_administration {
