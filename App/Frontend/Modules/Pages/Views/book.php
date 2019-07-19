@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 $titlePage = "Livre";
 $titleSocialNetworks = "Billet simple pour l'Alaska - Livre";
 $bodyPage = "";

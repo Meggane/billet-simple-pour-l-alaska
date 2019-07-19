@@ -2,20 +2,20 @@
 	<div class="container">
 		<div class="row main">
 			<div class="main-login main-center">
-				<form class="form-horizontal" method="post" action="#">	
+				<form class="form-horizontal" method="post" action="../../../../../App/Backend/Modules/Connexion/Views/connexion_post.php">	
 					<a href="javascript:void(0)" id="closebtn" onclick="form.closeFormConnexion()">&times;</a>
 					<h2>Connexion</h2>	
 					<div class="form-group">
-						<label for="pseudo_connexion" class="cols-sm-2 control-label">Pseudo</label>
+						<label for="login" class="cols-sm-2 control-label">Pseudo</label>
 						<div class="cols-sm-10">
 							<div class="input-group">
 								<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-                                <input type="text" class="form-control" name="pseudo" id="pseudo"  placeholder="Pseudo"/>
+                                <input type="text" class="form-control" name="login" id="login"  placeholder="Pseudo"/>
 							</div>
 						</div>
 					</div>
 					<div class="form-group">
-						<label for="password_connexion" class="cols-sm-2 control-label">Password</label>
+						<label for="password" class="cols-sm-2 control-label">Password</label>
 						<div class="cols-sm-10">
 							<div class="input-group">
 								<span class="input-group-addon"><i class="fas fa-lock"></i></span>
