@@ -58,7 +58,7 @@ h2 {
 
 /* BOOK */
 
-#nav_book {
+.nav_pages {
 	background-color: rgba(19, 107, 183, 0.9);
 	height: 50px;
 }
@@ -90,11 +90,6 @@ h2 {
 	border-bottom: 1px #000 solid;
 	width: 50%;
 	margin: auto;
-}
-
-.link_back_book {
-	position: relative;
-	top: 20px;
 }
 
 #ticket_book {
