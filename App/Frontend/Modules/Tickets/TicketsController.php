@@ -2,6 +2,7 @@
 
 require_once  __DIR__ . "/../../../../Model/PDOFactory.php";
 require_once __DIR__ . "/../../../../Model/TicketsManagerPDO.php";
+require_once __DIR__ . "/../../../../Model/CommentsManagerPDO.php";
 
 class TicketsController {
     protected $api = null,
@@ -53,7 +54,20 @@ class TicketsController {
             }
         }
     }
+
+    public function insertComment() {
+        $db = PDOFactory::getMysqlConnexion();
+        $manager = new CommentsManagerPDO($db);
+
+        if (isset($_GET['delete']))
+        {
+            $manager->delete((int) $_GET['delete']);
+            $previousPage = $_SERVER["HTTP_REFERER"];
+            header("Location: " . $previousPage);
+        }
+    }
 }
 
 $ticketsController = new TicketsController("PDO", PDOFactory::getMysqlConnexion());
 $ticketsController->insertTicket();
+$insertComment = $ticketsController->insertComment();
