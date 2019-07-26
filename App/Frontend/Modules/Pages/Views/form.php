@@ -7,7 +7,6 @@
 		<!-- Google Fonts -->
 <link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" type="text/css" href="../../../../../Public/css/form.css">
 
 							
 <?php
@@ -19,5 +18,4 @@ include __DIR__ . "/../../../../Backend/Modules/Registration/Views/registration.
 <script type="text/javascript" src="../../../../../Public/bootstrap/js/bootstrap.js"></script>
 <script src="../../../../../Public/js/variables.js"></script>
 <script src="../../../../../Public/js/form.js"></script>
-<script src="../../../../../Public/js/menuAdministration.js"></script>
 <script src="../../../../../Public/js/fonctions.js"></script>

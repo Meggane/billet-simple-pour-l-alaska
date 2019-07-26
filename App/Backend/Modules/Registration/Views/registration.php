@@ -1,8 +1,7 @@
 <?php
 
-require_once "../../../../../Model/PDOFactory.php";
-
-require_once "../../../../../Model/UsersManagerPDO.php";
+require_once __DIR__ . "/../../../../../Model/PDOFactory.php";
+require_once __DIR__ . "/../../../../../Model/UsersManagerPDO.php";
 
 $db = PDOFactory::getMysqlConnexion();
 $manager = new UsersManagerPDO($db);
@@ -34,23 +33,25 @@ if (isset($_POST["login"]) && isset($_POST["password"]) && isset($_POST["confirm
 }
 ?>
 
-
 <div id="registration_form">
 	<div class="container">
 		<div class="row main">
 			<div class="main-login main-center">
-				<form class="form-horizontal" method="post" action="../../../../../App/Backend/Modules/Registration/Views/registration.php">
+				<form class="form-horizontal" method="post" action="http://localhost/projet_4/App/Backend/Modules/Registration/Views/registration.php">
 					<a href="javascript:void(0)" id="closebtn" onclick="form.closeFormRegistration()">&times;</a>
-					<h2>Inscription</h2>
+					<h2 class="title_form">Inscription</h2>
+
 					<div class="form-group">
 						<label for="login" class="cols-sm-2 control-label">Pseudo</label>
 						<div class="cols-sm-10">
 							<div class="input-group">
 								<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-                                <input type="text" class="form-control" name="login" id="login"  placeholder="Pseudo"/>
+                                <input type="text" class="form-control" name="login" id="login"   placeholder="Pseudo"/>
+                                <span class="tooltip">Le pseudo doit comporter au moins 3 caractères</span>
 							</div>
 						</div>
 					</div>
+
 					<div class="form-group">
 						<label for="email" class="cols-sm-2 control-label">Email</label>
 						<div class="cols-sm-10">
@@ -60,28 +61,36 @@ if (isset($_POST["login"]) && isset($_POST["password"]) && isset($_POST["confirm
 							</div>
 						</div>
 					</div>
+
 					<div class="form-group">
 						<label for="password" class="cols-sm-2 control-label">Password</label>
 						<div class="cols-sm-10">
 							<div class="input-group">
 								<span class="input-group-addon"><i class="fas fa-lock"></i></span>
 								<input type="password" class="form-control" name="password" id="password"  placeholder="Mot de passe"/>
-							</div>
+							    <span class="tooltip">Le mot de passe doit comporter au moins une majuscule, un minuscule et un chiffre</span>
+                            </div>
 						</div>
 					</div>
+
 					<div class="form-group">
 						<label for="confirm_password" class="cols-sm-2 control-label required">Confirm Password</label>
 						<div class="cols-sm-10">
 							<div class="input-group">
 								<span class="input-group-addon"><i class="fas fa-lock"></i></span>
 								<input type="password" class="form-control" name="confirm_password" id="confirm_password"  placeholder="Confirmation mot de passe"/>
-							</div>
+							    <span class="tooltip">Les mots de passes doivent être identiques</span>
+                            </div>
 						</div>
 					</div>
+
 					<div class="form-group ">
 						<input type="submit" class="btn btn-primary btn-lg btn-block login-button" value="Je m'inscris">
 					</div>
 				</form>
+                <div id="connexion_link" onclick="form.openFormConnexion()">
+                    <a href="#">Déjà membre ?</a>
+                </div>
 			</div>
 		</div>
 	</div>

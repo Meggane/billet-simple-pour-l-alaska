@@ -2,13 +2,11 @@ class Form {
 	openFormRegistration() {
 		registrationForm.style.visibility = "visible";
 		connexionForm.style.visibility = "hidden";
-		subMenuAdministration.style.visibility = "hidden";
 	}
 
 	openFormConnexion() {
 		connexionForm.style.visibility = "visible";
 		registrationForm.style.visibility = "hidden";
-		subMenuAdministration.style.visibility = "hidden";
 	}
 
 	closeFormRegistration() {

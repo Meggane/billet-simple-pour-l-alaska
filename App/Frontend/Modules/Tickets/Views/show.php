@@ -1,16 +1,9 @@
 <?php
 session_start();
-
 require_once __DIR__ . "/../../../../../Model/TicketsManagerPDO.php";
 require_once __DIR__ . "/../../../../../Model/PDOFactory.php";
 require_once __DIR__ . "/../../../../../Model/CommentsManagerPDO.php";
 require_once __DIR__ . "/../TicketsController.php";
-
-$titlePage = "Chapitre";
-$titleSocialNetworks = "Billet simple pour l'Alaska - Chapitre";
-$bodyPage = "";
-
-ob_start();
 
 $db = PDOFactory::getMySqlConnexion();
 $comments = new CommentsManagerPDO($db);
@@ -18,6 +11,7 @@ $tickets = new TicketsManagerPDO($db);
 if (isset($_GET["id"])) {
     $ticketUnique = $tickets->getUnique($_GET["id"]);
 }
+
 ?>
 
 <link rel="stylesheet" type="text/css" href="../../../../../Public/css/style.css">
@@ -42,11 +36,11 @@ if (isset($ticketUnique)) {
 ?>
 
 
-<h2 class="text-center">Commentaires</h2>
+<h2 id="h2_show_ticket" class="text-center">Commentaires</h2>
 
 <?php include "../../Comments/Views/commentForm.php" ?>
 
-<form method="post" action="../../Comments/Views/insertComment.php?id=<?= $_GET["id"] ?>">
+<form id="form_show_ticket" method="post" action="../../Comments/Views/insertComment.php?id=<?= $_GET["id"] ?>">
     <p>
         <input class="input_form_comment" type="text" name="pseudo" id="pseudo" <?php
         if (isset($_SESSION["login"])) {
@@ -56,13 +50,9 @@ if (isset($ticketUnique)) {
         >
     </p>
     <p>
-        <textarea rows="10" cols="30" name="message" id="message"></textarea>
+        <textarea class="textarea_form_comment" rows="10" cols="30" name="message" id="message"></textarea>
     </p>
     <input type="submit" class="btn btn-primary" value="Envoyer">
 </form>
 
-<?php
-$contentPage = ob_get_clean();
-
-require("../../../Templates/layout.php");
-
+<script src="../../../../../Public/js/timestamp.js"></script>
