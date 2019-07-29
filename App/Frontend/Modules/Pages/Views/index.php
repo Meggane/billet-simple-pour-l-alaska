@@ -25,6 +25,8 @@ ob_start();
 </section>
 
 <?php
+include __DIR__ . "/footer.php";
+
 $contentPage = ob_get_clean();
 
 require("../../../Templates/layout.php");

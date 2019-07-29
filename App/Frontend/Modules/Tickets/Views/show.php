@@ -55,4 +55,6 @@ if (isset($ticketUnique)) {
     <input type="submit" class="btn btn-primary" value="Envoyer">
 </form>
 
+<?php include __DIR__ . "/../../Pages/Views/footer.php"; ?>
+
 <script src="../../../../../Public/js/timestamp.js"></script>

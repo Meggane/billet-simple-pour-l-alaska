@@ -15,7 +15,7 @@
         $_SESSION['login'] = $user->login();
     ?>
 
-    <li class="main_menu"><a class="link_menu" href="../../../../Frontend/Modules/Pages/Views/infoUser.php"><i class="fas fa-user"></i> <?= $_SESSION["login"] ?></a></li>
+    <li class="main_menu"><a class="link_menu" href="../../../../Backend/Modules/Users/Views/infoUser.php"><i class="fas fa-user"></i> <?= $_SESSION["login"] ?></a></li>
     <li class="main_menu"><a href="../../../../Backend/Modules/Connexion/Views/deconnexion.php" class="link_menu"><i class="fas fa-sign-in-alt"></i> Déconnexion</a></li>
     <?php
     } else {

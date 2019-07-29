@@ -18,7 +18,7 @@ $insertTicket = $ticketsController->insertTicket();
 $ticketList = $tickets->getList();
 ?>
 
-<nav class="nav_pages" class="main_nav">
+<nav class="nav_pages">
     <?php include "menu.php"; ?>
 </nav>
 
@@ -77,6 +77,8 @@ if (isset($_GET["id"])) {
         <?php
     }
 }
+
+include __DIR__ . "/footer.php";
 
 $contentPage = ob_get_clean();
 require __DIR__ . "/../../../Templates/layout.php"; ?>
