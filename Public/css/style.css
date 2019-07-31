@@ -59,17 +59,11 @@ h2 {
 /* BOOK */
 
 #button_create {
-	/*display: flex;
-	justify-content: flex-end;
-	position: relative;
-	top: 70px;
-	right: 20px;*/
 	display: flex;
 	justify-content: flex-end;
 	position: relative;
 	top: 70px;
 	right: 20px;
-	/*left: 20px;*/
 }
 
 .tickets {
@@ -87,12 +81,6 @@ h2 {
 	padding-bottom: 20px;
 }
 
-.ticket_border {
-	border-bottom: 1px #000 solid;
-	width: 50%;
-	margin: auto;
-}
-
 
 #ticket_book {
 	width: 80%;
@@ -108,10 +96,10 @@ h2 {
 	text-align: right;
 }
 
-.link_ticket_admin a {
+#btn_modify_book, #btn_remove_book {
+	width: 9%;
 	margin-left: 20px;
 	font-style: normal;
-	width: 7%;
 	padding: 1px;
 }
 
@@ -258,33 +246,6 @@ footer h5 {
 
 
 /* INSERT TICKET */
-
-/*.link_insert_ticket:hover {
-	color: #FFF;
-	text-shadow: 1px 1px 1px #000;
-}
-
-#title_insert_ticket {
-	width: 100%;
-}
-
-#content_insert_ticket {
-	height: 600px;
-}
-
-.body_insert_ticket {
-	width: 80%;
-	margin: auto;
-	background-image:linear-gradient(to right, #FFF, #2483DF);
-}
-
-#form_insert_ticket {
-	text-align: center;
-}*/
-
-
-
-
 
 .link_insert_ticket {
 	color: rgba(19, 107, 183, 0.9);

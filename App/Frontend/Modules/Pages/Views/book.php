@@ -60,14 +60,14 @@ if (isset($_GET["id"])) {
 
         <div class="tickets">
             <h1><a class="ticket_title" href="../../Tickets/Views/show.php?id=<?= $ticket->id() ?>"><?= $ticket->title() ?></a></h1>
-            <p class="ticket_border"></p>
             <p class="ticket_content"><?= nl2br($ticket->content()) ?></p>
-            <p>
+            <p class="link_ticket_admin">
                 <?= ($ticket->creationDate() == $ticket->modificationDate() ? "Publié le " . $ticket->creationDate()->format('d/m/Y à H\hi') : "Publié le " . $ticket->creationDate()->format('d/m/Y à H\hi') . " | Modifié le " . $ticket->modificationDate()->format('d/m/Y à H\hi'));
 
                 if (isset($_SESSION["admin"]) && $_SESSION["admin"] == 1) {
                     ?>
-                    <a href="../../Tickets/Views/insertTicket.php?id=<?= $ticket->id() ?>">Modifier</a> | <a href="?supprimer=<?= $ticket->id() ?>">Supprimer</a>
+                    <a id="btn_modify_book" class="btn btn-primary" href="../../Tickets/Views/insertTicket.php?id=<?= $ticket->id() ?>">Modifier</a>
+                    <a id="btn_remove_book" class="btn btn-danger" href="?supprimer=<?= $ticket->id() ?>">Supprimer</a>
                     <?php
                 }
                 ?>

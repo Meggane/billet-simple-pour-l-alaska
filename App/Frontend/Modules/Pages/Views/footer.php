@@ -9,7 +9,7 @@
                 <h5>ME CONTACTER</h5>
                 <ul id="footer_contact" class="list-unstyled">
                     <li>
-                        <p><i class="fas fa-envelope mr-3"></i> jeanforteroche@email.com</p>
+                        <p><i class="fas fa-envelope mr-3"></i> j.forteroche@email.com</p>
                     </li>
                     <li>
                         <p><i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>

@@ -2,7 +2,6 @@
 //session_start();
 require_once __DIR__ . "/../../../../../Model/PDOFactory.php";
 require_once __DIR__ . "/../../../../../Model/CommentsManagerPDO.php";
-//require_once __DIR__ . "/../../../../../Controller/test.php";
 
 $db = PDOFactory::getMySqlConnexion();
 $comments = new CommentsManagerPDO($db);
@@ -44,7 +43,7 @@ foreach ($commentList as $comment) {
                             <?php
                             }
                             ?>
-                            <a class="float-right btn text-white btn-danger"> <i class="fas fa-flag"></i> Signaler</a>
+                            <a href="../../Reports/Views/addReport.php?id=<?= $comment->id() ?>" class="float-right btn text-white btn-danger"> <i class="fas fa-flag"></i> Signaler</a>
                         </p>
                     </div>
                 </div>
