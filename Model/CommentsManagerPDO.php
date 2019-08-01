@@ -38,8 +38,8 @@ class CommentsManagerPDO extends CommentsManager {
 		return $comments;
 	}
 
-	public function get($idTickets) {
-		$q = $this->dao->prepare("SELECT id, idTickets, pseudo, message, publicationDate FROM comments WHERE idTickets = " . (int) $idTickets);
+	public function get($id) {
+		$q = $this->dao->prepare("SELECT id, idTickets, pseudo, message, publicationDate FROM comments WHERE id = " . (int) $id);
 		$q->execute();
 
 		$q->setFetchMode(PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE, "Comment");
