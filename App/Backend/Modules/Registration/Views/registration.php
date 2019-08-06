@@ -41,14 +41,16 @@ if (isset($_POST["login"]) && isset($_POST["password"]) && isset($_POST["confirm
 					<a href="javascript:void(0)" id="closebtn" onclick="form.closeFormRegistration()">&times;</a>
 					<h2 class="title_form">Inscription</h2>
 
+					<?php include __DIR__ . "/../../Connexion/Views/form.php" ?>
+
 					<div class="form-group">
-						<label for="login" class="cols-sm-2 control-label">Pseudo</label>
+						<label for="confirm_password" class="cols-sm-2 control-label required">Confirm Password</label>
 						<div class="cols-sm-10">
 							<div class="input-group">
-								<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-                                <input type="text" class="form-control" name="login" id="login"   placeholder="Pseudo"/>
-                                <span class="tooltip">Le pseudo doit comporter au moins 3 caractères</span>
-							</div>
+								<span class="input-group-addon"><i class="fas fa-lock"></i></span>
+								<input type="password" class="form-control" name="confirm_password" id="confirm_password"  placeholder="Confirmation mot de passe"/>
+                            </div>
+                            <p id="incorrect_confirm_password">Les mots de passe doivent être identiques</p>
 						</div>
 					</div>
 
@@ -59,33 +61,12 @@ if (isset($_POST["login"]) && isset($_POST["password"]) && isset($_POST["confirm
 								<span class="input-group-addon"><i class="fas fa-at"></i></span>
 								<input type="email" class="form-control" name="email" id="email"  placeholder="Email"/>
 							</div>
-						</div>
-					</div>
-
-					<div class="form-group">
-						<label for="password" class="cols-sm-2 control-label">Password</label>
-						<div class="cols-sm-10">
-							<div class="input-group">
-								<span class="input-group-addon"><i class="fas fa-lock"></i></span>
-								<input type="password" class="form-control" name="password" id="password"  placeholder="Mot de passe"/>
-							    <span class="tooltip">Le mot de passe doit comporter au moins une majuscule, un minuscule et un chiffre</span>
-                            </div>
-						</div>
-					</div>
-
-					<div class="form-group">
-						<label for="confirm_password" class="cols-sm-2 control-label required">Confirm Password</label>
-						<div class="cols-sm-10">
-							<div class="input-group">
-								<span class="input-group-addon"><i class="fas fa-lock"></i></span>
-								<input type="password" class="form-control" name="confirm_password" id="confirm_password"  placeholder="Confirmation mot de passe"/>
-							    <span class="tooltip">Les mots de passes doivent être identiques</span>
-                            </div>
+							<p id="incorrect_email">Veuillez indiquer un email valide</p>
 						</div>
 					</div>
 
 					<div class="form-group ">
-						<input type="submit" class="btn btn-primary btn-lg btn-block login-button" value="Je m'inscris">
+						<input id="tag_registration_submit" type="submit" class="btn btn-primary btn-lg btn-block login-button" value="Je m'inscris">
 					</div>
 				</form>
                 <div id="connexion_link" onclick="form.openFormConnexion()">

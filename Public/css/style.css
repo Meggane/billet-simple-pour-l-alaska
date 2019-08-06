@@ -140,16 +140,16 @@ h2 {
 #registration_form, #connexion_form {
     visibility: hidden;
     position: fixed;
-    left: 12%;
+    left: 15%;
     z-index: 2;
 }
 
 #registration_form {
-    bottom: 50px;
+    bottom: 100px;
 }
 
 #connexion_form {
-    bottom: 150px;
+    bottom: 200px;
 }
 
 .form-group {
@@ -197,6 +197,14 @@ input, input::-webkit-input-placeholder {
     font-size: 2em;
     display: flex;
     justify-content: flex-end;
+}
+
+#incorrect_login, #incorrect_password, #incorrect_confirm_password, #incorrect_email, #incorrect_connexion {
+	color: red;
+	font-size: 0.8em;
+	display: none;
+	justify-content: center;
+	text-align: center;
 }
 
 

@@ -25,6 +25,21 @@ if (isset($_SESSION["login"])) {
     <p>Pseudo : <?= $_SESSION["login"] ?></p>
     <p>Email : <?= $_SESSION["email"] ?></p>
 
+    <h2>Modifier le mot de passe</h2>
+    <form method="post" action="../../Registration/Views/update.php?id=<?= $user->id() ?>">
+        <label>Nouveau mot de passe :</label>
+        <p>
+            <input type="password" name="password" id="password">
+        </p>
+        <label>Confirmation nouveau mot de passe :</label>
+        <p>
+            <input type="password" name="confirm_password_infoUser" id="confirm_password_infoUser">
+        </p>
+        <p>
+            <input type="submit" value="Valider">
+        </p>
+    </form>
+
 <?php
 }
 
