@@ -16,7 +16,7 @@ if (isset($_GET["id"])) {
 
 <link rel="stylesheet" type="text/css" href="../../../../../Public/css/style.css">
 
-<nav class="nav_pages">
+<nav id="nav_show_ticket" class="nav_pages">
     <?php include "../../Pages/Views/menu.php"; ?>
 </nav>
 

@@ -24,7 +24,7 @@ if (isset($_SESSION["admin"]) && $_SESSION["admin"] == 1) {
     </nav>
 
     <div id="section_insert_ticket">
-        <p><a class="link_insert_ticket" href="<?= (isset($_SERVER["HTTP_REFERER"]) ? $_SERVER["HTTP_REFERER"] : "../../Pages/Views/index.php") ?>">Revenir à la page précédente</a></p>
+        <p><a class="link_insert_ticket" href="../../Pages/Views/book.php">Revenir à la page précédente</a></p>
 
         <form action="insertTicket.php" method="post">
             <p id="form_insert_ticket">

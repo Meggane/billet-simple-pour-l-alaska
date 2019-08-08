@@ -55,6 +55,22 @@ h2 {
 	margin-top: 15%;
 }
 
+#ancre {
+	display: flex;
+	justify-content: center;
+	margin-bottom: 20px;
+}
+
+.p_ancre {
+	margin: 20px;
+	text-align: justify;
+}
+
+.img_jean {
+	display: flex;
+	justify-content: center;
+}
+
 
 /* BOOK */
 
@@ -214,7 +230,7 @@ footer {
 	background-color: rgba(19, 107, 183, 0.9);
 	color: #FFF;
 	padding-top: 20px;
-	margin-top: 70px;
+	margin-top: 40px;
 }
 
 footer h5 {
@@ -370,21 +386,33 @@ input:focus {
 
 /* SHOW TICKET */
 
-#link_show_ticket {
+#nav_show_ticket {
+	font-size: 0.9em;
+}
+
+#link_show_ticket a {
 	display: flex;
 	justify-content: flex-end;
 	margin-right: 20px;
 	margin-top: 70px;
+	color: rgba(19, 107, 183, 0.9);
+}
+
+#link_show_ticket a:hover, #nav_show_ticket a:hover {
+	color: #31CCE5;
+	text-decoration: none;
 }
 
 #show_ticket {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
 	border: 1px #000 solid;
 	width: 80%;
 	margin: auto;
 	padding: 10px;
+}
+
+#show_ticket h1 {
+	display: flex;
+	justify-content: center;
 }
 
 .date_ticket_show {
@@ -405,9 +433,9 @@ input:focus {
 }
 
 .input_form_comment {
-	width: 100%;
-	margin-right: 100px;
+	height: 30px;
 	border: 1px #9A9EA2 solid;
+	font-size: 1.5em;
 }
 
 .textarea_form_comment, .input_form_comment {
@@ -479,4 +507,22 @@ input:focus {
 
 #report_valid a:hover {
 	color: #31CCE5;
+}
+
+
+
+/* SHOW REPORTS */
+
+#section_show_reports {
+	margin-top: 70px;
+}
+
+.p_count_showReports {
+	margin-left: 20px;
+}
+
+#h5_showReports {
+	width: 100%;
+	display: flex;
+	justify-content: center;
 }

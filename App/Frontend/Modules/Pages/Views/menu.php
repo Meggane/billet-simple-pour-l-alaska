@@ -16,6 +16,11 @@
     ?>
 
     <li class="main_menu"><a class="link_menu" href="../../../../Backend/Modules/Users/Views/infoUser.php"><i class="fas fa-user"></i> <?= $_SESSION["login"] ?></a></li>
+    <?php if (isset($_SESSION["admin"]) && $_SESSION["admin"] == 1) { ?>
+    <li class="main_menu"><a href="../../../../Frontend/Modules/Reports/Views/showReports.php" class="link_menu"><i class="fas fa-flag"></i> Signalements</a></li>
+    <?php
+    }
+    ?>
     <li class="main_menu"><a href="../../../../Backend/Modules/Connexion/Views/deconnexion.php" class="link_menu"><i class="fas fa-sign-in-alt"></i> Déconnexion</a></li>
     <?php
     } else {

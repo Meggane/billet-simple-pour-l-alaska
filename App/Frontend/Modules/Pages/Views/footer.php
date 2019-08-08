@@ -32,7 +32,7 @@
                         <i class="fab fa-instagram"></i>
                     </a>
                 </div>
-                <a id="mentions_legales" href="#">Mentions légales</a>
+                <a id="mentions_legales" href="../../Pages/Views/legalNotice.php">Mentions légales</a>
             </div>
         </div>
     </div>
