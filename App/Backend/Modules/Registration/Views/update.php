@@ -6,8 +6,8 @@ $users = new UsersManagerPDO($db);
 
 $user = $users->get($_GET["id"]);
 
-if (isset($_POST["password"]) && !empty($_POST["password"]) && isset($_POST["confirm_password_infoUser"]) && $_POST["password"] == $_POST["confirm_password_infoUser"]) {
-    $passwordCrypt = password_hash($_POST["password"], PASSWORD_DEFAULT);
+if (isset($_POST["password_infoUser"]) && !empty($_POST["password_infoUser"]) && isset($_POST["confirm_password_infoUser"]) && $_POST["password_infoUser"] == $_POST["confirm_password_infoUser"] && preg_match("/[A-Z]+/", $_POST["password_infoUser"]) && preg_match("/[a-z]+/", $_POST["password_infoUser"]) && preg_match("/[0-9]+/", $_POST["password_infoUser"])) {
+    $passwordCrypt = password_hash($_POST["password_infoUser"], PASSWORD_DEFAULT);
 
     $q = $db->prepare("UPDATE users SET password = :password WHERE id = :id");
     $q->bindValue(":password", $passwordCrypt);
@@ -18,3 +18,4 @@ if (isset($_POST["password"]) && !empty($_POST["password"]) && isset($_POST["con
 }
 
 echo "<p>Les mots de passe doivent être identiques</p>";
+

@@ -26,6 +26,8 @@ $comments = new CommentsManagerPDO($db);
 <section id="section_show_reports">
 <?php
 foreach ($reportsList as $report) {
+    $idComment = $report->idComment();
+    $comment = $comments->get($idComment);
     ?>
 
     <div class="container">
@@ -46,6 +48,9 @@ foreach ($reportsList as $report) {
                         <p><?= $report->message() ?></p>
                         <p>
                             <a href="?delete=#" class="float-right btn btn-outline-primary ml-2"> <i class="fas fa-trash-alt"></i> Supprimer</a>
+                        </p>
+                        <p>
+                            <a href="../../Tickets/Views/show.php?id=<?= $comment->idTickets() ?>#<?= $comment->id() ?>" class="float-right btn btn-outline-primary ml-2">Voir le commentaire</a>
                         </p>
                     </div>
                 </div>

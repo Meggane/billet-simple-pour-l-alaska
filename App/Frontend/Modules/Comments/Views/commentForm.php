@@ -1,5 +1,4 @@
 <?php
-//session_start();
 require_once __DIR__ . "/../../../../../Model/PDOFactory.php";
 require_once __DIR__ . "/../../../../../Model/CommentsManagerPDO.php";
 
@@ -21,7 +20,7 @@ $commentList = $comments->getList($_GET["id"]);
 foreach ($commentList as $comment) {
     ?>
 
-    <div class="container">
+    <div id="<?= $comment->id() ?>" class="container">
         <div class="card">
             <div class="card-body">
                 <div class="row">

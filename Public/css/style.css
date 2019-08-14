@@ -303,17 +303,28 @@ footer h5 {
 
 /* INFO USER */
 
-#delete_user {
-	color: #ED1D1D;
+#h2_infoUser {
 	display: flex;
-	justify-content: flex-end;
-	margin-top: 70px;
-	margin-right: 20px;
+	justify-content: center;
+	margin-bottom: 20px;
 }
 
-.fas.fa-times {
-	margin-top: 3px;
-	margin-right: 3px;
+#delete_user {
+	color: #ED1D1D;
+}
+
+#passwordForm div {
+	padding-bottom: 5px;
+}
+
+#info_user {
+	width: 95%;
+	margin-top: 70px;
+}
+
+#submit_change_password {
+	margin-top: 10px;
+	margin-left: 35%;
 }
 
 
@@ -398,7 +409,7 @@ input:focus {
 	color: rgba(19, 107, 183, 0.9);
 }
 
-#link_show_ticket a:hover, #nav_show_ticket a:hover {
+#link_show_ticket a:hover, #nav_show_ticket a:hover, #nav_info_user a:hover {
 	color: #31CCE5;
 	text-decoration: none;
 }
