@@ -7,6 +7,9 @@ class Form {
 	openFormConnexion() {
 		connexionForm.style.visibility = "visible";
 		registrationForm.style.visibility = "hidden";
+		if (navUl.style.visibility == "visible") {
+			navUl.style.visibility = "hidden";
+		}
 	}
 
 	closeFormRegistration() {

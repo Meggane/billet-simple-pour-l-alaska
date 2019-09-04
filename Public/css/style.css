@@ -13,6 +13,10 @@ a:hover {
 	text-decoration: none;
 }
 
+img {
+	max-width: 100%;
+}
+
 
 /* INDEX */
 
@@ -27,11 +31,11 @@ a:hover {
 	background-color: rgba(19, 107, 183, 0.5);
 }
 
-.link_index, .link_menu {
+.link_index, .link_menu, .link_insert_ticket {
 	color: #FFF;
 }
 
-#titleIndex, h2 {
+#titleIndex, .title_form {
 	display: flex;
 	justify-content: center;
 }
@@ -44,7 +48,7 @@ a:hover {
 	text-shadow: 2px 2px #000;
 }
 
-h2 {
+.title_form {
 	color: #000;
 }
 
@@ -72,6 +76,7 @@ h2 {
 }
 
 
+
 /* BOOK */
 
 #button_create {
@@ -97,7 +102,6 @@ h2 {
 	padding-bottom: 20px;
 }
 
-
 #ticket_book {
 	width: 80%;
 	margin: auto;
@@ -112,16 +116,24 @@ h2 {
 	text-align: right;
 }
 
-#btn_modify_book, #btn_remove_book {
-	width: 9%;
+.link_ticket_admin a {
 	margin-left: 20px;
 	font-style: normal;
+	width: 7%;
 	padding: 1px;
+}
+
+#btn_modify_book, #btn_remove_book {
+	width: 9%;
 }
 
 
 
 /* MENU */
+
+#mobile_menu {
+	display: none;
+}
 
 .nav_pages {
 	background-color: rgba(19, 107, 183, 0.9);
@@ -135,7 +147,7 @@ h2 {
 	z-index: 2;
 }
 
-.nav_ul {
+#nav_ul {
 	display: flex;
 	justify-content: center;
 	margin-top: 0;
@@ -150,87 +162,12 @@ h2 {
 }
 
 
-
-/* FORM */
-
-#registration_form, #connexion_form {
-    visibility: hidden;
-    position: fixed;
-    left: 15%;
-    z-index: 2;
-}
-
-#registration_form {
-    bottom: 100px;
-}
-
-#connexion_form {
-    bottom: 200px;
-}
-
-.form-group {
-	margin-bottom: 15px;
-}
-
-label {
-	margin-bottom: 14px;
-}
-
-input, input::-webkit-input-placeholder {
-    font-size: 9px;
-    padding-top: 3px;
-}
-
-.main-login{
- 	background-color: #fff;
-    border: 1px #7D8082 solid;
-    -moz-border-radius: 2px;
-    -webkit-border-radius: 2px;
-    border-radius: 2px;
-    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 1);
-    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 1);
-    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.5);
-}
-
-.main-center{
- 	margin-top: 30px;
- 	margin: 0 auto;
- 	max-width: 330px;
-    padding: 40px 40px;
-}
-
-.login-button{
-	margin-top: 3px;
-}
-
-.login-register{
-	font-size: 8px;
-	text-align: center;
-}
-
-#closebtn {
-    color: #000;
-    font-size: 2em;
-    display: flex;
-    justify-content: flex-end;
-}
-
-#incorrect_login, #incorrect_password, #incorrect_confirm_password, #incorrect_email, #incorrect_connexion {
-	color: red;
-	font-size: 0.8em;
-	display: none;
-	justify-content: center;
-	text-align: center;
-}
-
-
 /* FOOTER */
 
 footer {
 	background-color: rgba(19, 107, 183, 0.9);
 	color: #FFF;
 	padding-top: 20px;
-	margin-top: 40px;
 }
 
 footer h5 {
@@ -267,6 +204,11 @@ footer h5 {
 #footer_contact {
 	margin-left: 50px;
 }
+
+.a_propos_index {
+	font-size: 0.8em;
+}
+
 
 
 /* INSERT TICKET */
@@ -327,6 +269,9 @@ footer h5 {
 	margin-left: 35%;
 }
 
+.glyphicon-remove {
+	color: #FF0004;
+}
 
 
 /* CONNEXION */
@@ -340,7 +285,6 @@ footer h5 {
 	display: flex;
 	justify-content: center;
 }
-
 
 
 /* REGISTRATION */
@@ -393,13 +337,13 @@ input:focus {
 	border-radius: 4px;
 }
 
+#tooltip_pseudo {
+	display: block;
+}
+
 
 
 /* SHOW TICKET */
-
-#nav_show_ticket {
-	font-size: 0.9em;
-}
 
 #link_show_ticket a {
 	display: flex;
@@ -409,9 +353,8 @@ input:focus {
 	color: rgba(19, 107, 183, 0.9);
 }
 
-#link_show_ticket a:hover, #nav_show_ticket a:hover, #nav_info_user a:hover {
+#link_show_ticket a:hover {
 	color: #31CCE5;
-	text-decoration: none;
 }
 
 #show_ticket {
@@ -438,9 +381,6 @@ input:focus {
 
 #form_show_ticket {
 	margin-top: 50px;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
 }
 
 .input_form_comment {
@@ -453,6 +393,29 @@ input:focus {
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
 	border-radius: 5px;
+	width: 100%;
+}
+
+.textarea_form_comment {
+	height: 300px;
+}
+
+#btn_send_comment {
+	margin-left: 42%;
+}
+
+.float-left {
+	color: rgb(19, 107, 183);
+}
+
+
+.btn-outline-primary {
+	border: 1px #2891ED solid;
+}
+
+.btn-outline-primary:hover {
+	background-color: #2891ED;
+	color: #FFF;
 }
 
 
@@ -461,7 +424,6 @@ input:focus {
 
 #comment_of_report {
 	margin-top: 70px;
-	font-size: 1.4em;
 }
 
 #form_report {
@@ -491,13 +453,15 @@ input:focus {
 #form_report p {
 	margin-top: 20px;
 	margin-bottom: 30px;
+	font-size: 0.7em;
 }
 
-#nav_addReport, #nav_showReports {
+#nav_showReports {
 	font-size: 1.4em;
 }
 
-#nav_addReport a:hover, #comment_of_report a:hover, #nav_showReports a:hover {
+
+#nav_showReports a:hover, #nav_info_user a:hover {
 	color: #31CCE5;
 	text-decoration: none;
 }
@@ -521,7 +485,6 @@ input:focus {
 }
 
 
-
 /* SHOW REPORTS */
 
 #section_show_reports {
@@ -536,4 +499,108 @@ input:focus {
 	width: 100%;
 	display: flex;
 	justify-content: center;
+}
+
+
+
+/* FORM */
+
+#registration_form {
+	visibility: hidden;
+	position: fixed;
+	left: 11%;
+	top: 10%;
+	z-index: 2;
+}
+
+#nav_show_ticket #registration_form {
+	left: 12%;
+}
+
+#nav_show_ticket #registration_form form, #nav_show_ticket #connexion_form form {
+	width: 200px;
+}
+
+#registration_form {
+	bottom: 100px;
+}
+
+.form-group{
+	margin-bottom: 15px;
+}
+
+label{
+	margin-bottom: 14px;
+}
+
+input,
+input::-webkit-input-placeholder {
+	font-size: 9px;
+	padding-top: 3px;
+}
+
+.main-login{
+	background-color: #fff;
+	border: 1px #7D8082 solid;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	border-radius: 2px;
+	-moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 1);
+	-webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 1);
+	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.5);
+
+}
+
+.main-center{
+	margin-top: 30px;
+	margin: 0 auto;
+	max-width: 330px;
+	padding: 40px 40px;
+}
+
+.login-button{
+	margin-top: 3px;
+}
+
+.login-register{
+	font-size: 8px;
+	text-align: center;
+}
+
+#closebtn {
+	color: #000;
+	font-size: 2em;
+	display: flex;
+	justify-content: flex-end;
+}
+
+#incorrect_login, #incorrect_password, #incorrect_confirm_password, #incorrect_email, #incorrect_connexion, #incorrect_login_connexion, #incorrect_password_connexion {
+	color: red;
+	font-size: 0.8em;
+	display: none;
+	justify-content: center;
+	text-align: center;
+}
+
+
+/* LEGAL NOTICES */
+
+#legal_notice {
+	margin-top: 70px;
+}
+
+.text_center {
+	text-align: center;
+}
+
+.text_justify {
+	text-align: justify;
+}
+
+#legal_notice span {
+	background-color: #D3D3D3;
+}
+
+.span_color {
+	color: #FF0000;
 }

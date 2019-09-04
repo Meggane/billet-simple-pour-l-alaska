@@ -10,6 +10,8 @@ abstract class ReportsManager extends Manager {
 
     abstract public function deleteFromComment($idComment);
 
+    abstract public function deleteFromTickets($idTickets);
+
     public function save(Reports $reports) {
         if ($reports->isValid()) {
             $reports->isNew() ? $this->add($reports) : $this->modify($reports);
@@ -18,11 +20,8 @@ abstract class ReportsManager extends Manager {
         }
     }
 
-    // recover the liste of reports
     abstract public function getList($idComment);
 
-
-    // recover report specific of the list
     abstract public function get($id);
 
     abstract public function getAll();

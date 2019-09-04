@@ -4,9 +4,10 @@ require_once "ReportsManager.php";
 
 class ReportsManagerPDO extends ReportsManager {
     protected function add(Reports $reports) {
-        $q = $this->dao->prepare("INSERT INTO reports SET idComment = :idComment, pseudo = :pseudo, message = :message, reportingDate = NOW()");
+        $q = $this->dao->prepare("INSERT INTO reports SET idComment = :idComment, idTickets = :idTickets, pseudo = :pseudo, message = :message, reportingDate = NOW()");
 
         $q->bindValue(":idComment", $reports->idComment(), PDO::PARAM_INT);
+        $q->bindValue(":idTickets", $reports->idTickets(), PDO::PARAM_INT);
         $q->bindValue(":pseudo", $reports->pseudo());
         $q->bindValue(":message", $reports->message());
 
@@ -23,8 +24,12 @@ class ReportsManagerPDO extends ReportsManager {
         $this->dao->exec("DELETE FROM reports WHERE idComment = " . (int) $idComment);
     }
 
+    public function deleteFromTickets($idTickets) {
+        $this->dao->exec("DELETE FROM reports WHERE idTickets = " . (int) $idTickets);
+    }
+
     public function getList($idComment) {
-        $q = $this->dao->prepare("SELECT id, idComment, pseudo, message, reportingDate FROM reports WHERE idComment = " . (int) $idComment . " ORDER BY id DESC");
+        $q = $this->dao->prepare("SELECT id, idComment, idTickets, pseudo, message, reportingDate FROM reports WHERE idComment = " . (int) $idComment . " ORDER BY id DESC");
         $q->execute();
 
         $q->setFetchMode(PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE, "Reports");
@@ -39,7 +44,7 @@ class ReportsManagerPDO extends ReportsManager {
     }
 
     public function get($id) {
-        $q = $this->dao->prepare("SELECT id, idComment, pseudo, message, reportingDate FROM reports WHERE id = " . (int) $id);
+        $q = $this->dao->prepare("SELECT id, idComment, idTickets, pseudo, message, reportingDate FROM reports WHERE id = " . (int) $id);
         $q->execute();
 
         $q->setFetchMode(PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE, "Reports");
@@ -48,7 +53,7 @@ class ReportsManagerPDO extends ReportsManager {
     }
 
     public function getAll() {
-        $sql = "SELECT id, idComment, pseudo, message, reportingDate FROM reports ORDER BY id DESC";
+        $sql = "SELECT id, idComment, idTickets, pseudo, message, reportingDate FROM reports ORDER BY id DESC";
 
         $req = $this->dao->query($sql);
         $req->setFetchMode(PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE, "Reports");

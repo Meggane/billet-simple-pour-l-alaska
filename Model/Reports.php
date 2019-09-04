@@ -4,6 +4,7 @@ require_once "Entity.php";
 
 class Reports extends Entity {
     protected $idComment,
+              $idTickets,
               $pseudo,
               $message,
               $reportingDate;
@@ -17,6 +18,10 @@ class Reports extends Entity {
 
     public function setIdComment($idComment) {
         $this->idComment = (int) $idComment;
+    }
+
+    public function setIdTickets($idTickets) {
+        $this->idTickets = (int) $idTickets;
     }
 
     public function setPseudo($pseudo) {
@@ -41,6 +46,10 @@ class Reports extends Entity {
 
     public function idComment() {
         return $this->idComment;
+    }
+
+    public function idTickets() {
+        return $this->idTickets;
     }
 
     public function pseudo() {

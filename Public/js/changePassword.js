@@ -11,9 +11,6 @@ $("input[type=password]").keyup(function(){
         $("#8char").removeClass("glyphicon-ok");
         $("#8char").addClass("glyphicon-remove");
         $("#8char").css("color","#FF0004");
-        /*$("#submit_change_password").click(function() {
-            return false;
-        })*/
     }
 
     if(ucase.test($("#password_infoUser").val())){
@@ -55,4 +52,12 @@ $("input[type=password]").keyup(function(){
         $("#pwmatch").addClass("glyphicon-remove");
         $("#pwmatch").css("color","#FF0004");
     }
+
+    $("#submit_change_password").click(function() {
+        if ($("#8char").hasClass("glyphicon-remove") || $("#ucase").hasClass("glyphicon-remove") || $("#lcase").hasClass("glyphicon-remove") || $("#num").hasClass("glyphicon-remove") || $("#pwmatch").hasClass("glyphicon-remove")) {
+            return false;
+        } else {
+            return true;
+        }
+    });
 });

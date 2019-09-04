@@ -1,6 +1,6 @@
 <div id="form_report">
     <h3>Signaler ce commentaire</h3>
-    <form method="post" action="../../../../Backend/Modules/Reports/Views/report.php?id=<?= $comment->id() ?>">
+    <form method="post" action="../../../../../Controller/ReportsController.php?idComment=<?= $comment->id() ?>">
         <label for="pseudo">
             <input class="input_pseudo_report" type="text" id="pseudo" name="pseudo" <?php
             if (isset($_SESSION["login"])) {

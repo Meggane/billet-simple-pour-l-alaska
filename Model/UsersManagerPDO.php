@@ -1,43 +1,45 @@
 <?php
 
+//include "Comment.php";
 require_once __DIR__ . "/UsersManager.php";
 
 class UsersManagerPDO extends UsersManager {
-	protected function add(Users $users) {
-		$q = $this->dao->prepare("INSERT INTO users SET login = :login, password = :password, email = :email, admin = false");
-		
-		$q->bindValue(":login", $users->login());
-		$q->bindValue(":password", $users->password());
-		$q->bindValue(":email", $users->email());
+    protected function add(Users $users) {
+        $q = $this->dao->prepare("INSERT INTO users SET login = :login, password = :password, email = :email, admin = false");
 
-		$q->execute();
 
-		$users->setId($this->dao->lastInsertId());
-	}
+        $q->bindValue(":login", $users->login());
+        $q->bindValue(":password", $users->password());
+        $q->bindValue(":email", $users->email());
 
-	public function delete($id) {
-		$this->dao->exec("DELETE FROM users WHERE id = " . (int) $id);
-	}
+        $q->execute();
 
-	public function get($id) {
-		$q = $this->dao->prepare("SELECT id, login, password, email FROM users WHERE id = :id");
+        $users->setId($this->dao->lastInsertId());
+    }
 
-        $q->bindValue(":id", (int) $id, PDO::PARAM_INT);
-		$q->execute();
+    public function delete($id) {
+        $this->dao->exec("DELETE FROM users WHERE id = " . (int) $id);
+    }
 
-		$q->setFetchMode(PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE, "Users");
+    public function get($login) {
+        $q = $this->dao->prepare("SELECT id, login, password, email, admin FROM users WHERE login = :login");
 
-		return $q->fetch();
-	}
+        $q->bindValue(":login", $login);
+        $q->execute();
 
-	protected function modify(Users $users) {
-		$q = $this->dao->prepare("UPDATE users SET login = :login, password = :password, email = :email WHERE id = :id");
+        $q->setFetchMode(PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE, "Users");
 
-		$q->bindValue(":login", $users->login());
-		$q->bindValue(":password", $users->password());
-		$q->bindValue(":email", $users->email());
-		$q->bindValue(":id", $users->id(), PDO::PARAM_INT);
-		
-		$q->execute();
-	}
+        return $q->fetch();
+    }
+
+    public function modify(Users $users) {
+        $q = $this->dao->prepare("UPDATE users SET login = :login, password = :password, email = :email WHERE id = :id");
+
+        $q->bindValue(":login", $users->login());
+        $q->bindValue(":password", $users->password());
+        $q->bindValue(":email", $users->email());
+        $q->bindValue(":id", $users->id(), PDO::PARAM_INT);
+
+        $q->execute();
+    }
 }

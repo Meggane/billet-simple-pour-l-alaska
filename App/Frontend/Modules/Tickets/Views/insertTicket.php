@@ -1,5 +1,4 @@
 <?php
-ob_start();
 session_start();
 
 if (isset($_SESSION["admin"]) && $_SESSION["admin"] == 1) {
@@ -7,11 +6,8 @@ if (isset($_SESSION["admin"]) && $_SESSION["admin"] == 1) {
     $titleSocialNetworks = "Billet simple pour l'Alaska - Créer un billet";
     $bodyPage = "body_insert_ticket";
 
-    require_once __DIR__ . "/../../../../../Model/PDOFactory.php";
-    require_once __DIR__ . "/../../../../../Model/TicketsManagerPDO.php";
-    require_once __DIR__ . "/../TicketsController.php";
-    $db = PDOFactory::getMysqlConnexion();
-    $tickets = new TicketsManagerPDO($db);
+    require_once __DIR__ . "/../../../../../Controller/pageController.php";
+    require_once __DIR__ . "/../../../../../page.php";
 
     if (isset($_GET["id"])) {
         $ticket = $tickets->getUnique($_GET["id"]);
@@ -26,7 +22,7 @@ if (isset($_SESSION["admin"]) && $_SESSION["admin"] == 1) {
     <div id="section_insert_ticket">
         <p><a class="link_insert_ticket" href="../../Pages/Views/book.php">Revenir à la page précédente</a></p>
 
-        <form action="insertTicket.php" method="post">
+        <form action="../../../../../Controller/TicketsController.php" method="post">
             <p id="form_insert_ticket">
               
                 <script type="text/javascript" src="../../../../../Public/tinymce/js/tinymce/tinymce.js"></script>
@@ -75,7 +71,3 @@ if (isset($_SESSION["admin"]) && $_SESSION["admin"] == 1) {
 } else {
     header("Location: ../../../../../Errors/permission.html");
 }
-
-$contentPage = ob_get_clean();
-
-require "../../../Templates/layout.php";

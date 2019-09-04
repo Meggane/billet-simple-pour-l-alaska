@@ -16,7 +16,7 @@ abstract class UsersManager extends Manager {
 		}
 	}
 
-	abstract public function get($id);
+	abstract public function get($login);
 
 	abstract protected function modify(Users $users);
 }

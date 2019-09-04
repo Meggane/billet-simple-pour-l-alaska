@@ -37,10 +37,6 @@
     <?= $contentPage ?>
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"></script>
-    <script src="../../../../../Public/js/variables.js"></script>
-    <script src="../../../../../Public/js/form.js"></script>
-    <script src="../../../../../Public/js/menuAdministration.js"></script>
-    <script src="../../../../../Public/js/fonctions.js"></script>
 
   </body>
 </html>

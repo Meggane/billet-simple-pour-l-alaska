@@ -18,5 +18,5 @@ include __DIR__ . "/../../../../Backend/Modules/Connexion/Views/connexion.php";
 <script type="text/javascript" src="../../../../../Public/bootstrap/js/bootstrap.js"></script>
 <script src="../../../../../Public/js/variables.js"></script>
 <script src="../../../../../Public/js/form.js"></script>
-<script src="../../../../../Public/js/registration.js"></script>
+<script src="../../../../../Public/js/menu.js"></script>
 <script src="../../../../../Public/js/fonctions.js"></script>
