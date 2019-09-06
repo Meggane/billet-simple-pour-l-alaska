@@ -26,7 +26,7 @@
                                 <span class="input-group-addon"><i class="fas fa-lock"></i></span>
                                 <input type="password" class="form-control" name="password" id="password"  placeholder="Mot de passe"/>
                             </div>
-                            <p id="incorrect_password">Le mot de passe doit comporter au moins une majuscule, une minuscule et un chiffre</p>
+                            <p id="incorrect_password">Le mot de passe doit comporter au moins 6 caractères dont une majuscule, une minuscule et un chiffre</p>
                         </div>
                     </div>
 

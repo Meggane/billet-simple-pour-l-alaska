@@ -1,22 +1,22 @@
 class Form {
 	openFormRegistration() {
-		registrationForm.style.visibility = "visible";
-		connexionForm.style.visibility = "hidden";
+		registrationForm.css("visibility", "visible");
+		connexionForm.css("visibility", "hidden");
 	}
 
 	openFormConnexion() {
-		connexionForm.style.visibility = "visible";
-		registrationForm.style.visibility = "hidden";
-		if (navUl.style.visibility == "visible") {
-			navUl.style.visibility = "hidden";
+		$("#connexion_form").css("visibility", "visible");
+		$("#registration_form").css("visibility", "hidden");
+		if (navUl.css("visibility") == "visible" && mobileMenu.css("display") == "flex") {
+			navUl.css("visibility", "hidden");
 		}
 	}
 
 	closeFormRegistration() {
-		registrationForm.style.visibility = "hidden";
+		registrationForm.css("visibility", "hidden");
 	}
 
 	closeFormConnexion() {
-		connexionForm.style.visibility = "hidden";
+		connexionForm.css("visibility", "hidden");
 	}
 }

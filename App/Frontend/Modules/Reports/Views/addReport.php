@@ -1,18 +1,17 @@
 <?php
 session_start();
-ob_start();
 $titlePage = "Signalement commentaire";
 $titleSocialNetworks = "Signalement commentaire";
 $bodyPage = "";
 
 require_once __DIR__ . "/../../../../../Model/PDOFactory.php";
 require_once __DIR__ . "/../../../../../Model/CommentsManagerPDO.php";
+require_once __DIR__ . "/../../../../../page.php";
 
 $db = PDOFactory::getMySqlConnexion();
 $comments = new CommentsManagerPDO($db);
 $comment = $comments->get((int) $_GET["id"]);
-
-include __DIR__ . "/../../Comments/Views/commentForm.php" ?>
+?>
 
 <nav id="nav_addReport" class="nav_pages">
     <?php include __DIR__ . "/../../Pages/Views/menu.php"; ?>
@@ -39,6 +38,3 @@ include __DIR__ . "/../../Comments/Views/commentForm.php" ?>
 </div>
 
 <?php include __DIR__ . "/reportForm.php";
-
-$contentPage = ob_get_clean();
-require_once __DIR__ . "/../../../Templates/layout.php";

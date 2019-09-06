@@ -1,7 +1,5 @@
 <?php
 session_start();
-ob_start();
-
 $titlePage = "Liste des signalements des commentaires";
 $titleSocialNetworks = "Liste des signalements des commentaires";
 $bodyPage = "";
@@ -9,6 +7,7 @@ $bodyPage = "";
 require_once __DIR__ . "/../../../../../Model/PDOFactory.php";
 require_once __DIR__ . "/../../../../../Model/ReportsManagerPDO.php";
 require_once __DIR__ . "/../../../../../Model/CommentsManagerPDO.php";
+require_once __DIR__ . "/../../../../../page.php";
 
 
 $db = PDOFactory::getMySqlConnexion();
@@ -47,7 +46,7 @@ foreach ($reportsList as $report) {
                         <div class="clearfix"></div>
                         <p><?= $report->message() ?></p>
                         <p>
-                            <a href="?delete=#" class="float-right btn btn-outline-primary ml-2"> <i class="fas fa-trash-alt"></i> Supprimer</a>
+                            <a href="?delete=<?= $report->id() ?>" class="float-right btn btn-outline-primary ml-2"> <i class="fas fa-trash-alt"></i> Supprimer</a>
                         </p>
                         <p>
                             <a href="../../Tickets/Views/show.php?id=<?= $comment->idTickets() ?>#<?= $comment->id() ?>" class="float-right btn btn-outline-primary ml-2">Voir le commentaire</a>
@@ -65,7 +64,3 @@ foreach ($reportsList as $report) {
 }
 ?>
 </section>
-
-<?php
-$contentPage = ob_get_clean();
-require_once __DIR__ . "/../../../Templates/layout.php";

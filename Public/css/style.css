@@ -604,3 +604,207 @@ input::-webkit-input-placeholder {
 .span_color {
 	color: #FF0000;
 }
+
+
+
+/* MEDIA QUERIES */
+
+@media screen and (max-width: 1260px) {
+	/* INDEX */
+
+	#titleIndex {
+		padding-top: 30%;
+	}
+
+
+	/* BOOK */
+
+	#btn_modify_book, #btn_remove_book {
+		width: 12%;
+	}
+
+
+	/* FOOTER */
+
+	#footer_contact {
+		margin-left: 0;
+	}
+
+
+	/* INFO USER */
+
+	#submit_change_password {
+		margin-left: 30%;
+	}
+}
+
+
+@media screen and (max-width: 991px) {
+	/*INDEX */
+
+	#titleIndex {
+		padding-top: 45%;
+	}
+
+
+	/* BOOK */
+
+	#btn_modify_book, #btn_remove_book {
+		width: 14%;
+	}
+
+
+	/* INFO USER */
+
+	#submit_change_password {
+		margin-left: 25%;
+	}
+}
+
+
+@media screen and (max-width: 790px) {
+	img {
+		max-width: 90%;
+		max-height: 350px;
+	}
+
+	/* INDEX */
+
+	#background_header_index {
+		height: 500px;
+	}
+
+	#titleIndex {
+		padding: 10px;
+		padding-top: 35%;
+	}
+
+	#double_arrows {
+		visibility: hidden;
+	}
+
+
+	/* BOOK */
+
+	.ticket_title, #show_ticket h1 {
+		text-align: center;
+	}
+
+	.tickets {
+		margin-top: 100px;
+		width: 98%;
+	}
+
+	#button_create {
+		justify-content: center;
+		right: 0;
+	}
+
+	#btn_modify_book, #btn_remove_book {
+		width: 40%;
+		font-size: 1em;
+		margin-top: 10px;
+		height: 30px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.link_ticket_admin {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+	}
+
+
+	/* MENU */
+
+	#mobile_menu {
+		display: flex;
+		font-size: 2em;
+		margin-top: 10px;
+		color: #FFF;
+	}
+
+	#mobile_menu i {
+		cursor: pointer;
+	}
+
+	#nav_ul {
+		visibility: hidden;
+		flex-direction: column;
+		align-items: flex-start;
+		border-radius: 5px;
+		width: 50%;
+		margin-left: 10px;
+		background-color: rgba(0, 0, 0, 0.8);
+	}
+
+	.main_menu {
+		padding-left: 0;
+		text-align: left;
+	}
+
+
+	/* FORM */
+
+	#registration_form {
+		position: absolute;
+		top: 200px;
+		left: 5%;
+		width: 90%;
+	}
+
+
+	/* SHOW TICKET */
+
+	#show_ticket {
+		width: 98%;
+	}
+
+	#btn_send_comment {
+		margin-left: 0;
+	}
+
+
+
+	/* REPORT FORM */
+
+	#form_report textarea, .input_pseudo_report,  #submit_report_form{
+		width: 100%;
+		font-size: 0.9em;
+	}
+
+	#form_report p {
+		text-align: center;
+	}
+
+
+	/* REPORT VALID */
+
+	#report_valid {
+		text-align: center;
+	}
+
+
+	/* INFO USER */
+
+	#submit_change_password {
+		margin-left: 0;
+		font-size: 0.9em;
+	}
+
+	#nav_info_user {
+		position: absolute;
+		left: 0;
+	}
+
+	#nav_info_user i {
+		margin-left: 15px;
+	}
+
+	#nav_info_user li {
+		margin-left: 25px;
+	}
+}

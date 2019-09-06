@@ -1,69 +1,53 @@
 class Registration {
     checkFields() {
-        login.addEventListener("blur", function () {
-            if (login.value.length < 3) {
-                login.style.borderColor = "red";
+        login.blur(function () {
+            if (login.val().length < 3) {
+                login.css("borderColor", "red");
+                incorrectLogin.css("display", "flex");
             } else {
-                login.style.borderColor = "initial";
+                login.css("borderColor", "initial");
+                incorrectLogin.css("display", "none");
             }
         });
 
-        password.addEventListener("blur", function() {
+        password.blur(function() {
             let regexPasswordMaj = /[A-Z]/;
             let regexPasswordMin = /[a-z]/;
             let regexPasswordNumber = /[0-9]/;
-            if (password.value.length < 6 || !password.value.match(regexPasswordMaj) || !password.value.match(regexPasswordMin) || !password.value.match(regexPasswordNumber)) {
-                password.style.borderColor = "red";
+            if (password.val().length < 6 || !password.val().match(regexPasswordMaj) || !password.val().match(regexPasswordMin) || !password.val().match(regexPasswordNumber)) {
+                password.css("borderColor", "red");
+                incorrectPassword.css("display", "flex");
             } else {
-                password.style.borderColor = "initial";
+                password.css("borderColor", "initial");
+                incorrectPassword.css("display", "none");
             }
         });
 
-        confirmPassword.addEventListener("blur", function() {
-            if (password.value !== confirmPassword.value) {
-                confirmPassword.style.borderColor = "red";
+        confirmPassword.blur(function() {
+            if (password.val() !== confirmPassword.val()) {
+                confirmPassword.css("borderColor", "red");
+                incorrectConfirmPassword.css("display", "flex");
             } else {
-                confirmPassword.style.borderColor = "initial";
+                confirmPassword.css("borderColor", "initial");
+                incorrectConfirmPassword.css("display", "none");
             }
         });
 
-        email.addEventListener("blur", function () {
+        email.blur(function () {
             let regexEmail = /^([A-Za-z0-9]+)@+([a-z0-9]+)\.([a-z]{2,6})$/;
-            if (!email.value.match(regexEmail)) {
-                email.style.borderColor = "red";
+            if (!email.val().match(regexEmail)) {
+                email.css("borderColor", "red");
+                incorrectEmail.css("display", "flex");
             } else {
-                email.style.borderColor = "initial";
+                email.css("borderColor", "initial");
+                incorrectEmail.css("display", "none");
             }
         });
     }
 
     registrationValid() {
         registrationSubmit.click(function() {
-            if (login.style.borderColor == "red" || password.style.borderColor == "red" || confirmPassword.style.borderColor == "red" || login.value == "" || password.value == "" || confirmPassword.value == "" || email.value == "") {
-                if (login.style.borderColor == "red" || login.value == "") {
-                    incorrectLogin.style.display = "flex";
-                } else {
-                    incorrectLogin.style.display = "none";
-                }
-
-                if (password.style.borderColor == "red" || password.value == "") {
-                    incorrectPassword.style.display = "flex";
-                } else {
-                    incorrectPassword.style.display = "none";
-                }
-
-                if (confirmPassword.style.borderColor == "red" || confirmPassword.value == "") {
-                    incorrectConfirmPassword.style.display = "flex";
-                } else {
-                    incorrectConfirmPassword.style.display = "none";
-                }
-
-                if (email.style.borderColor == "red" || email.value == "") {
-                    incorrectEmail.style.display = "flex";
-                } else {
-                    incorrectEmail.style.display = "none";
-                }
-
+            if (login.css("borderColor") == "red" || password.css("borderColor") == "red" || confirmPassword.css("borderColor") == "red" || login.val() == "" || password.val() == "" || confirmPassword.val() == "" || email.val() == "") {
                 return false;
             } else {
                 return true;
