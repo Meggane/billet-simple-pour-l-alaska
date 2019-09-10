@@ -7,7 +7,7 @@ class Form {
 	openFormConnexion() {
 		$("#connexion_form").css("visibility", "visible");
 		$("#registration_form").css("visibility", "hidden");
-		if (navUl.css("visibility") == "visible" && mobileMenu.css("display") == "flex") {
+		if (navUl.css("visibility") == "visible" || mobileMenu.css("display") == "flex") {
 			navUl.css("visibility", "hidden");
 		}
 	}

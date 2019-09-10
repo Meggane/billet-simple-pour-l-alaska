@@ -33,7 +33,7 @@
                     <div id="incorrect_connexion">Le pseudo ou le mot de passe sont incorrect</div>
 
                     <div class="form-group ">
-                        <input id="tag_connexion_submit" type="submit" class="btn btn-primary btn-lg btn-block login-button" onclick="connexion.connexionValid()" VALUE="Connexion">
+                        <input id="tag_connexion_submit" type="submit" class="btn btn-primary btn-lg btn-block login-button" onclick="connexion.connexionNotValid()" VALUE="Connexion">
                     </div>
                 </form>
                 <div id="registration_link" onclick="form.openFormRegistration()">

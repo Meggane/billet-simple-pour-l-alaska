@@ -266,7 +266,6 @@ footer h5 {
 
 #submit_change_password {
 	margin-top: 10px;
-	margin-left: 35%;
 }
 
 .glyphicon-remove {
@@ -629,13 +628,6 @@ input::-webkit-input-placeholder {
 	#footer_contact {
 		margin-left: 0;
 	}
-
-
-	/* INFO USER */
-
-	#submit_change_password {
-		margin-left: 30%;
-	}
 }
 
 
@@ -651,13 +643,6 @@ input::-webkit-input-placeholder {
 
 	#btn_modify_book, #btn_remove_book {
 		width: 14%;
-	}
-
-
-	/* INFO USER */
-
-	#submit_change_password {
-		margin-left: 25%;
 	}
 }
 
@@ -746,6 +731,10 @@ input::-webkit-input-placeholder {
 		text-align: left;
 	}
 
+	.main_nav, .nav_pages {
+		position: absolute;
+	}
+
 
 	/* FORM */
 
@@ -790,21 +779,15 @@ input::-webkit-input-placeholder {
 
 	/* INFO USER */
 
-	#submit_change_password {
-		margin-left: 0;
+	#info_user {
 		font-size: 0.9em;
 	}
 
-	#nav_info_user {
-		position: absolute;
-		left: 0;
+	#h2_infoUser {
+		font-size: 1.5em;
 	}
 
-	#nav_info_user i {
-		margin-left: 15px;
-	}
-
-	#nav_info_user li {
-		margin-left: 25px;
+	#submit_change_password, #password_infoUser, #confirm_password_infoUser {
+		font-size: 0.9em;
 	}
 }

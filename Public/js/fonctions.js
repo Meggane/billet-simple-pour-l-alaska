@@ -5,3 +5,4 @@ registration.checkFields();
 registration.registrationValid();
 
 let connexion = new Connexion();
+connexion.connexionNotValid();

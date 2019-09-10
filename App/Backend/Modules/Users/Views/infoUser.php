@@ -14,23 +14,19 @@ if (isset($_SESSION["login"])) {
         <?php include __DIR__ . "/../../../../Frontend/Modules/Pages/Views/menu.php"; ?>
     </nav>
 
-    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
-    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-
     <br><br>
     <div id="info_user" class="container-fluid well span6">
         <div class="row-fluid">
-            <div class="span2" >
+            <div class="col-lg-2 col-sm-3 col-xs-4" >
                 <img src="https://image.ibb.co/jw55Ex/def_face.jpg" class="img-circle">
             </div>
 
-            <div class="span8">
+            <div class="col-lg-8 col-sm-6 col-xs-4">
                 <h3><?= $_SESSION["login"] ?></h3>
                 <h6>Email: <?= $_SESSION["email"] ?></h6>
             </div>
 
-            <div class="span2">
+            <div class="col-lg-2 col-sm-3 col-xs-4">
                 <a href="?delete-user=<?= $user->id() ?>" id="delete_user"><i class="fas fa-times"></i> Supprimer mon compte</a>
             </div>
         </div>
@@ -62,7 +58,7 @@ if (isset($_SESSION["login"])) {
                             <span id="pwmatch" class="glyphicon glyphicon-remove"></span> Les mots de passe sont identiques
                         </div>
                     </div>
-                    <input id="submit_change_password" type="submit" class="col-xs-12 btn btn-primary btn-load btn-lg" data-loading-text="Changing Password..." value="Modifier le mot de passe">
+                    <input id="submit_change_password" type="submit" class="col-lg-12 col-xs-12 btn btn-primary btn-load btn-lg" data-loading-text="Changing Password..." value="Modifier le mot de passe">
                 </form>
             </div>
         </div>
