@@ -1,4 +1,5 @@
 <?php
+
 require_once __DIR__ . "/BackController.php";
 require_once __DIR__ . "/pageController.php";
 
@@ -8,8 +9,7 @@ class CommentsController extends BackController {
     }
 
     public function insertComment() {
-        $db = PDOFactory::getMySqlConnexion();
-        $tickets = new TicketsManagerPDO($db);
+        include __DIR__ . "/variableController.php";
         $ticket = $tickets->getUnique(htmlspecialchars($_GET["idTicket"]));
         $idTickets = $ticket->id();
         $comments = new CommentsManagerPDO($db);
@@ -38,13 +38,11 @@ class CommentsController extends BackController {
     }
 
     public function deleteComment() {
-        $db = PDOFactory::getMysqlConnexion();
-        $manager = new CommentsManagerPDO($db);
-        $reports = new ReportsManagerPDO($db);
+        include __DIR__ . "/variableController.php";
 
         if (isset($_GET['delete']))
         {
-            $manager->delete(htmlspecialchars((int) $_GET['delete']));
+            $comments->delete(htmlspecialchars((int) $_GET['delete']));
             $reports->deleteFromComment(htmlspecialchars((int) $_GET['delete']));
             header("Location: " . $_SERVER["HTTP_REFERER"]);
         }

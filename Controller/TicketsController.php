@@ -1,9 +1,6 @@
 <?php
 
-require_once  __DIR__ . "/../Model/PDOFactory.php";
-require_once __DIR__ . "/../Model/TicketsManagerPDO.php";
-require_once __DIR__ . "/../Model/CommentsManagerPDO.php";
-require_once __DIR__ . "/../Model/ReportsManagerPDO.php";
+require_once __DIR__ . "/pageController.php";
 require_once __DIR__ . "/BackController.php";
 
 class TicketsController extends BackController {
@@ -13,8 +10,7 @@ class TicketsController extends BackController {
     }
 
     public function insertTicket() {
-        $db = PDOFactory::getMysqlConnexion();
-        $manager = new TicketsManagerPDO($db);
+        include __DIR__ . "/variableController.php";
 
         if (isset($_POST['title']) && isset($_POST['content']))
         {
@@ -32,12 +28,13 @@ class TicketsController extends BackController {
 
             if ($ticket->isValid())
             {
-                $manager->save($ticket);
-                header("Location: ../App/Frontend/Modules/Pages/Views/book.php");
+                $tickets->save($ticket);
+                header("Location: ../Views/Pages/book.php");
                 exit();
             }
             else
             {
+                //$errors = $ticket->errors();
                 header("Location: " . $_SERVER["HTTP_REFERER"]);
                 exit();
             }
@@ -45,14 +42,11 @@ class TicketsController extends BackController {
     }
 
     public function deleteTicket() {
-        $db = PDOFactory::getMysqlConnexion();
-        $manager = new TicketsManagerPDO($db);
-        $comments = new CommentsManagerPDO($db);
-        $reports = new ReportsManagerPDO($db);
+        include __DIR__ . "/variableController.php";
 
         if (isset($_GET['supprimer']))
         {
-            $manager->delete(htmlspecialchars((int) $_GET['supprimer']));
+            $tickets->delete(htmlspecialchars((int) $_GET['supprimer']));
             $comments->deleteFromTickets(htmlspecialchars((int) $_GET['supprimer']));
             $reports->deleteFromTickets(htmlspecialchars((int) $_GET['supprimer']));
         }

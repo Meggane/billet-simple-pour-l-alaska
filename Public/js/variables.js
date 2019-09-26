@@ -16,5 +16,5 @@ let passwordConnexion = $("#password_connexion");
 let incorrectLoginConnexion = $("#incorrect_login_connexion");
 let incorrectPasswordConnexion = $("#incorrect_password_connexion");
 
-let mobileMenu = $("#mobile_menu_font_awesome");
+let mobileMenu = $("#mobile_menu");
 let navUl = $("#nav_ul");

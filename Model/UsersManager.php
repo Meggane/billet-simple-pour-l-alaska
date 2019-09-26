@@ -16,7 +16,10 @@ abstract class UsersManager extends Manager {
 		}
 	}
 
+	// recover comment specific of the list
 	abstract public function get($login);
 
-	abstract protected function modify(Users $users);
+    abstract public function getAllEmail($email);
+
+	abstract public function modify(Users $users);
 }

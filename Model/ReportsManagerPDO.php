@@ -53,9 +53,8 @@ class ReportsManagerPDO extends ReportsManager {
     }
 
     public function getAll() {
-        $sql = "SELECT id, idComment, idTickets, pseudo, message, reportingDate FROM reports ORDER BY id DESC";
+        $req = $this->dao->query("SELECT id, idComment, idTickets, pseudo, message, reportingDate FROM reports ORDER BY id DESC");
 
-        $req = $this->dao->query($sql);
         $req->setFetchMode(PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE, "Reports");
 
         $reportList = $req->fetchAll();

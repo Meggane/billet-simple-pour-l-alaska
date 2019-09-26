@@ -1,5 +1,4 @@
 <?php
-
 abstract class BackController {
 	protected $module = "",
               $view = "",
@@ -11,6 +10,7 @@ abstract class BackController {
 	public function __construct($app, $db) {
         $this->app = $app;
         $this->db = $db;
+
         $this->name = "";
 	}
 

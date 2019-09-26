@@ -1,7 +1,6 @@
 <?php
 
-require_once  __DIR__ . "/../Model/PDOFactory.php";
-require_once __DIR__ . "/../Model/UsersManagerPDO.php";
+require_once __DIR__ . "/pageController.php";
 require_once __DIR__ . "/BackController.php";
 
 class UsersController extends BackController {
@@ -11,8 +10,7 @@ class UsersController extends BackController {
     }
 
     public function createUser() {
-        $db = PDOFactory::getMySqlConnexion();
-        $users = new UsersManagerPDO($db);
+        include __DIR__ . "/variableController.php";
 
         if (isset($_POST["login"]) && isset($_POST["password"]) && isset($_POST["confirm_password"]) && isset($_POST["email"]) && !empty($_POST["password"]) && htmlspecialchars($_POST["password"]) == htmlspecialchars($_POST["confirm_password"]))
         {
@@ -39,7 +37,6 @@ class UsersController extends BackController {
                     $_SESSION["email"] = $user->email();
                     $_SESSION["id"] = $user->id();
                     $_SESSION["admin"] = $user->admin();
-
                     header("Location: " . $_SERVER["HTTP_REFERER"]);
                 }
             }
@@ -47,19 +44,17 @@ class UsersController extends BackController {
     }
 
 	public function deleteUser() {
-        $db = PDOFactory::getMySqlConnexion();
-        $manager = new UsersManagerPDO($db);
+        include __DIR__ . "/variableController.php";
 
         if (isset($_GET["delete-user"])) {
             session_destroy();
-            $manager->delete(htmlspecialchars((int) $_GET["delete-user"]));
-            header("Location: ../../../../Frontend/Modules/Pages/Views/index.php");
+            $users->delete(htmlspecialchars((int) $_GET["delete-user"]));
+            header("Location: ../../Views/Pages/index.php");
         }
     }
 
     public function updateUser() {
-        $db = PDOFactory::getMySqlConnexion();
-        $users = new UsersManagerPDO($db);
+        include __DIR__ . "/variableController.php";
         if (isset($_GET["login"])) {
             $user = $users->get(htmlspecialchars($_GET["login"]));
         }
@@ -78,25 +73,7 @@ class UsersController extends BackController {
     }
 
     public function connexionUser() {
-        if (!empty($_POST['login_connexion']) && !empty($_POST['password_connexion']))
-        {
-            $db = PDOFactory::getMySqlConnexion();
-            $users = new UsersManagerPDO($db);
-            $user = $users->get(htmlspecialchars($_POST["login_connexion"]));
-            if (isset($_POST["password_connexion"]) && password_verify(htmlspecialchars($_POST['password_connexion']), $user->password()))
-            {
-                session_start();
-                $_SESSION["login"] = $user->login();
-                $_SESSION["email"] = $user->email();
-                $_SESSION["id"] = $user->id();
-                $_SESSION["admin"] = $user->admin();
-                header("Location: " . $_SERVER["HTTP_REFERER"]);
-            }
-            else
-            {
-                header("Location: " . $_SERVER["HTTP_REFERER"]);
-            }
-        }
+
     }
 }
 

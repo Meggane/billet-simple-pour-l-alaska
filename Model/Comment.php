@@ -6,7 +6,8 @@ class Comment extends Entity {
 	protected $idTickets,
 			  $pseudo,
 			  $message,
-			  $publicationDate;
+			  $publicationDate,
+              $report;
 
 	const INVALID_PSEUDO = 1;
 	const INVALID_MESSAGE = 2;
@@ -39,6 +40,10 @@ class Comment extends Entity {
 		$this->publicationDate = $publicationDate;
 	}
 
+	public function setReport($report) {
+        $this->report = (bool) $report;
+    }
+
 	public function idTickets() {
 		return $this->idTickets;
 	}
@@ -54,4 +59,8 @@ class Comment extends Entity {
 	public function publicationDate() {
 		return $this->publicationDate;
 	}
+
+	public function report() {
+	    return $this->report;
+    }
 }

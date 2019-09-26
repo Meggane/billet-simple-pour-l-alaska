@@ -1,11 +1,33 @@
 class Connexion {
     connexionNotValid() {
-        connexionSubmit.click(function () {
-            if (loginConnexion.val().match(/[a-z0-9A-Z]{3,}/) && passwordConnexion.val().match(/(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.[!@#\$%\^&\*\?]{0,})(?=.{6,})/)) {
-                return true;
-            } else {
-                return false;
-            }
+        $(document).ready(function () {
+
+            $("#tag_connexion_submit").click(function(e){
+
+                e.preventDefault();
+
+                $.post(
+                    '../../Controller/connexionController.php',
+                    {
+                        login_connexion : $("#login_connexion").val(),
+                        password_connexion : $("#password_connexion").val()
+                    },
+
+                    function(data){
+                        if(data == 'Success'){
+                            $("#incorrect_connexion").css("display", "none");
+                            setTimeout(self.location.href="",1000);
+                        }
+                        else{
+                            $("#incorrect_connexion").css("display", "flex");
+                        }
+                    },
+                    'text'
+                );
+            });
         });
     }
 }
+
+let connexion = new Connexion();
+connexion.connexionNotValid();

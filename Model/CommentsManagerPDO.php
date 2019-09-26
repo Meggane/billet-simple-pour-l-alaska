@@ -4,7 +4,7 @@ require_once "CommentsManager.php";
 
 class CommentsManagerPDO extends CommentsManager {
 	protected function add(Comment $comment) {
-		$q = $this->dao->prepare("INSERT INTO comments SET idTickets = :idTickets, pseudo = :pseudo, message = :message, publicationDate = NOW()");
+		$q = $this->dao->prepare("INSERT INTO comments SET idTickets = :idTickets, pseudo = :pseudo, message = :message, publicationDate = NOW(), report = 0");
 
 		$q->bindValue(":idTickets", $comment->idTickets(), PDO::PARAM_INT);
 		$q->bindValue(":pseudo", $comment->pseudo());
@@ -24,7 +24,7 @@ class CommentsManagerPDO extends CommentsManager {
 	}
 
 	public function getList($idTickets) {
-		$q = $this->dao->prepare("SELECT id, idTickets, pseudo, message, publicationDate FROM comments WHERE idTickets = " . (int) $idTickets . " ORDER BY id DESC");
+		$q = $this->dao->prepare("SELECT id, idTickets, pseudo, message, publicationDate, report FROM comments WHERE idTickets = " . (int) $idTickets . " ORDER BY id DESC");
 		$q->execute();
 
 		$q->setFetchMode(PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE, "Comment");
@@ -39,7 +39,7 @@ class CommentsManagerPDO extends CommentsManager {
 	}
 
 	public function get($id) {
-		$q = $this->dao->prepare("SELECT id, idTickets, pseudo, message, publicationDate FROM comments WHERE id = " . (int) $id);
+		$q = $this->dao->prepare("SELECT id, idTickets, pseudo, message, publicationDate, report FROM comments WHERE id = " . (int) $id);
 		$q->execute();
 
 		$q->setFetchMode(PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE, "Comment");
@@ -47,7 +47,7 @@ class CommentsManagerPDO extends CommentsManager {
 		return $q->fetch();
 	}
 
-	protected function modify(Comment $comment) {
+    protected function modify(Comment $comment) {
 		$q = $this->dao->prepare("UPDATE comments SET pseudo = :pseudo, message = :message WHERE id = :id");
 
 		$q->bindValue(":pseudo", $comment->pseudo());

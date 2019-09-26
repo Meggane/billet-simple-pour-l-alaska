@@ -11,7 +11,7 @@ class TicketsManagerPDO extends TicketsManager {
 	}
 
 	protected function add(Tickets $ticket) {
-		$req = $this->db->prepare("INSERT INTO tickets(title, content, creationDate, modificationDate) VALUES (:title, :content, NOW(), NOW())");
+		$req = $this->db->prepare("INSERT INTO tickets(title, content, creationDate, modificationDate) VALUES (:title, :content, NOW(), NOW())"); // requêtes préparées sont plus sécurisé au niveau des attaques XSS
 
 		$req->bindValue(":title", $ticket->title());
 		$req->bindValue(":content", $ticket->content());
@@ -33,16 +33,16 @@ class TicketsManagerPDO extends TicketsManager {
 		$req = $this->db->query($sql);
 		$req->setFetchMode(PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE, "Tickets");
 
-		$listeTickets = $req->fetchAll();
+		$ticketList = $req->fetchAll();
 
-		foreach ($listeTickets as $ticket) {
+		foreach ($ticketList as $ticket) {
 			$ticket->setCreationDate(new DateTime($ticket->creationDate()));
 			$ticket->setModificationDate(new DateTime($ticket->modificationDate()));
 		}
 
 		$req->closeCursor();
 
-		return $listeTickets;
+		return $ticketList;
 	}
 
 	public function getUnique($id) {
@@ -51,7 +51,7 @@ class TicketsManagerPDO extends TicketsManager {
 		$req->bindValue(":id", (int) $id, PDO::PARAM_INT);
 		$req->execute();
 
-		$req->setFetchMode(PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE, "Tickets");
+		$req->setFetchMode(PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE, "Tickets"); //retourne une instance de la classe Tickets et les colonnes sélectionnées sont donc liées aux attributs de la classe
 
 		$ticket = $req->fetch();
 
