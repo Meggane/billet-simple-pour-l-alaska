@@ -2,17 +2,15 @@
 require_once __DIR__ . "/../../Controller/pageController.php";
 include __DIR__ . "/../../Controller/variableController.php";
 $commentList = $comments->getList($_GET["id"]);
-?>
 
-<?php
 foreach ($commentList as $comment) {
-    ?>
+?>
 
     <div id="<?= $comment->id() ?>" class="container">
         <div class="card">
             <div class="card-body">
                 <div class="row">
-                    <div class="test2 col-md-2">
+                    <div class="presentation_comment_form col-md-2">
                         <img src="https://image.ibb.co/jw55Ex/def_face.jpg" class="img img-rounded img-fluid"/>
                         <p id="commentPost" class="text-secondary text-center">Posté le <?= $comment->publicationDate()->format("d/m/Y à H:i") ?></p>
                     </div>
@@ -38,5 +36,5 @@ foreach ($commentList as $comment) {
         </div>
     </div>
 
-    <?php
+<?php
 }

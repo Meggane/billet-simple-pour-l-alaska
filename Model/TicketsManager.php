@@ -1,5 +1,4 @@
 <?php
-
 require_once "Tickets.php";
 require_once "Manager.php";
 

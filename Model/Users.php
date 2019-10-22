@@ -1,10 +1,8 @@
 <?php
-
 require_once __DIR__ . "/Entity.php";
 
 class Users extends Entity {
-	protected $id,
-			  $login,
+	protected $login,
 			  $password,
 			  $email,
               $admin;
@@ -15,10 +13,6 @@ class Users extends Entity {
 
 	public function isValid() {
 		return !(empty($this->login) || empty($this->password) || empty($this->email));
-	}
-
-	public function setId($id) {
-		$this->id = (int) $id;
 	}
 
 	public function setLogin($login) {
@@ -48,10 +42,6 @@ class Users extends Entity {
 	public function setAdmin($admin) {
 	    $this->admin = (bool) $admin;
     }
-
-	public function id() {
-		return $this->id;
-	}
 
 	public function login() {
 		return $this->login;

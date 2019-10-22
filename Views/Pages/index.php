@@ -1,12 +1,9 @@
 <?php
 session_start();
-
 $titlePage = "Accueil";
 $titleSocialNetworks = "Billet simple pour l'Alaska - Accueil";
-$bodyPage = "";
 
 include __DIR__ . "/../../page.php";
-
 ?>
 
 <header id="header_index">

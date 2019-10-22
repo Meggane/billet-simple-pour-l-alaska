@@ -2,14 +2,13 @@
 session_start();
 $titlePage = "Signalement commentaire";
 $titleSocialNetworks = "Signalement commentaire";
-$bodyPage = "";
 
 require_once __DIR__ . "/../../page.php";
 require_once __DIR__ . "/../../Controller/pageController.php";
 include __DIR__ . "/../../Controller/variableController.php";
 
 $comment = $comments->get(htmlspecialchars((int) $_GET["id"]));
- ?>
+?>
 
 <nav id="nav_addReport" class="nav_pages">
     <?php include __DIR__ . "/../Pages/menu.php"; ?>
@@ -21,11 +20,11 @@ $comment = $comments->get(htmlspecialchars((int) $_GET["id"]));
             <div class="row">
                 <div class="add_report_presentation col-md-2 col-sm-4 col-xs-4">
                     <img src="https://image.ibb.co/jw55Ex/def_face.jpg" class="img img-rounded img-fluid"/>
-                    <p id="commentPost" class="text-secondary text-center"><?= $comment->publicationDate() ?></p>
+                    <p id="commentPost" class="text-secondary text-center">Posté le <?= $comment->publicationDate()->format("d/m/Y à H\hi") ?></p>
                 </div>
                 <div class="add_report_presentation col-md-10 col-sm-8 col-xs-8">
                     <p>
-                        <a class="float-left" href="#"><strong><?= $comment->pseudo() ?></strong></a>
+                        <a id="pseudo_addReport" class="float-left" href="#"><strong><?= $comment->pseudo() ?></strong></a>
                     </p>
                     <div class="clearfix"></div>
                     <p><?= $comment->message() ?></p>

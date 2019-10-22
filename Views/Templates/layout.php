@@ -31,8 +31,8 @@
     <link rel="stylesheet" type="text/css" href="../../Public/css/font_awesome_animation.css">
     <link rel="stylesheet" type="text/css" href="../../Public/css/style.css">
   </head>
-  
-  <body class="<?= $bodyPage ?>">
+
+  <body>
     
     <?= $contentPage ?>
 

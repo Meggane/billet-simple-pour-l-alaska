@@ -1,5 +1,4 @@
 <?php
-
 require_once "ReportsManager.php";
 
 class ReportsManagerPDO extends ReportsManager {

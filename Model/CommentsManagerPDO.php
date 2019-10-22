@@ -1,5 +1,4 @@
 <?php
-
 require_once "CommentsManager.php";
 
 class CommentsManagerPDO extends CommentsManager {
@@ -44,7 +43,11 @@ class CommentsManagerPDO extends CommentsManager {
 
 		$q->setFetchMode(PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE, "Comment");
 
-		return $q->fetch();
+		$comment = $q->fetch();
+
+        $comment->setPublicationDate(new DateTime($comment->publicationDate()));
+
+		return $comment;
 	}
 
     protected function modify(Comment $comment) {

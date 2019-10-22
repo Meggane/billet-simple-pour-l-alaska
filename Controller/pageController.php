@@ -8,3 +8,5 @@ require_once __DIR__ . "/TicketsController.php";
 require_once __DIR__ . "/CommentsController.php";
 require_once __DIR__ . "/ReportsController.php";
 require_once __DIR__ . "/UsersController.php";
+
+require_once __DIR__ . "/callController.php";

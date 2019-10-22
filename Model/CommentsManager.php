@@ -1,5 +1,4 @@
 <?php
-
 require_once "Manager.php";
 require_once "Comment.php";
 
@@ -18,11 +17,8 @@ abstract class CommentsManager extends Manager {
 		}
 	}
 
-	// recover the liste of comment
 	abstract public function getList($idTickets);
 
-
-	// recover comment specific of the list
 	abstract public function get($id);
 
 	abstract protected function modify(Comment $comment);

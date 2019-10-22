@@ -1,27 +1,17 @@
 <?php
-
 require_once __DIR__ . "/UsersManager.php";
 
 class UsersManagerPDO extends UsersManager {
 	protected function add(Users $users) {
 		$q = $this->dao->prepare("INSERT INTO users SET login = :login, password = :password, email = :email, admin = false");
 
-		if ($this->get($_POST["login"]) || $this->getAllEmail($_POST["email"])) {
-		    if ($this->get($_POST["login"])) {
-		        echo "Failed";
-            } else {
-                echo "Failed";
-            }
-        } else {
-            $q->bindValue(":login", $users->login());
-            $q->bindValue(":password", $users->password());
-            $q->bindValue(":email", $users->email());
+		$q->bindValue(":login", $users->login());
+		$q->bindValue(":password", $users->password());
+		$q->bindValue(":email", $users->email());
 
-            $q->execute();
+		$q->execute();
 
-            $users->setId($this->dao->lastInsertId());
-            echo "Success";
-        }
+		$users->setId($this->dao->lastInsertId());
 	}
 
 	public function delete($id) {
@@ -50,14 +40,23 @@ class UsersManagerPDO extends UsersManager {
         return $q->fetch();
     }
 
-	public function modify(Users $users) {
-		$q = $this->dao->prepare("UPDATE users SET login = :login, password = :password, email = :email WHERE id = :id");
+    public function modify(Users $users)
+    {
+        $q = $this->dao->prepare("UPDATE users SET login = :login, password = :password, email = :email WHERE id = :id");
 
-		$q->bindValue(":login", $users->login());
-		$q->bindValue(":password", $users->password());
-		$q->bindValue(":email", $users->email());
-		$q->bindValue(":id", $users->id(), PDO::PARAM_INT);
+        $q->bindValue(":login", $users->login());
+        $q->bindValue(":password", $users->password());
+        $q->bindValue(":email", $users->email());
+        $q->bindValue(":id", $users->id(), PDO::PARAM_INT);
 
+        $q->execute();
+    }
+
+    public function updatePassword($id) {
+        $passwordCrypt = password_hash(htmlspecialchars($_POST["password_infoUser"]), PASSWORD_DEFAULT);
+
+		$q = $this->dao->prepare("UPDATE users SET password = :password WHERE id = " . (int) $id);
+		$q->bindValue(":password", $passwordCrypt);
 		$q->execute();
 	}
 }

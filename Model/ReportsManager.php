@@ -1,5 +1,4 @@
 <?php
-
 require_once "Manager.php";
 require_once "Reports.php";
 
@@ -20,11 +19,8 @@ abstract class ReportsManager extends Manager {
         }
     }
 
-    // recover the liste of reports
     abstract public function getList($idComment);
 
-
-    // recover report specific of the list
     abstract public function get($id);
 
     abstract public function getAll();

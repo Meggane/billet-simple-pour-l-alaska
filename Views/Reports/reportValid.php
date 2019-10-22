@@ -2,7 +2,6 @@
 session_start();
 $titlePage = "Commentaire signalé";
 $titleSocialNetworks = "Billet simple pour l'alaska - Commentaire signalé";
-$bodyPage = "";
 
 require_once __DIR__ . "/../../page.php";
 ?>

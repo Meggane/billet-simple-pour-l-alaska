@@ -1,7 +1,5 @@
 <?php
-
 require_once __DIR__ . "/BackController.php";
-require_once __DIR__ . "/pageController.php";
 
 class CommentsController extends BackController {
     public function __construct($app, $db) {
@@ -29,7 +27,6 @@ class CommentsController extends BackController {
                 $comments->save($comment);
                 header("Location: " . $_SERVER["HTTP_REFERER"]);
             } else {
-                //$errors = $comment->errors();
                 header("Location: " . $_SERVER["HTTP_REFERER"] . "#form_show_ticket");
             }
         } else {
@@ -40,8 +37,7 @@ class CommentsController extends BackController {
     public function deleteComment() {
         include __DIR__ . "/variableController.php";
 
-        if (isset($_GET['delete']))
-        {
+        if (isset($_GET['delete'])) {
             $comments->delete(htmlspecialchars((int) $_GET['delete']));
             $reports->deleteFromComment(htmlspecialchars((int) $_GET['delete']));
             header("Location: " . $_SERVER["HTTP_REFERER"]);
@@ -49,8 +45,4 @@ class CommentsController extends BackController {
     }
 }
 
-$commentsController = new CommentsController("PDO", PDOFactory::getMysqlConnexion());
-if (isset($_GET["idTicket"])) {
-    $insertComment = $commentsController->insertComment();
-}
-$deleteComment = $commentsController->deleteComment();
+require_once __DIR__ . "/pageController.php";

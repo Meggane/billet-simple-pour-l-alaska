@@ -2,7 +2,6 @@
 session_start();
 $titlePage = "Chapitre";
 $titleSocialNetworks = "Billet simple pour l'Alaska - Chapitre";
-$bodyPage = "";
 
 require_once __DIR__ . "/../../Controller/pageController.php";
 include __DIR__ . "/../../Controller/variableController.php";
@@ -25,10 +24,9 @@ if (isset($ticketUnique)) {
 <div id="show_ticket">
     <h1><?= $ticketUnique->title() ?></h1>
     <p><?= nl2br($ticketUnique->content()) ?></p>
-    <p class="date_ticket_show"><?= ($ticketUnique->creationDate() == $ticketUnique->modificationDate() ? "Publié le " . $ticketUnique->creationDate()->format("d/m/Y à H\hi") : "Publié le " . $ticketUnique->creationDate()->format("d/m/Y à H\hi") . " | Modifié le " . $ticketUnique->modificationDate()->format("d/m/Y à H\hi")) ?>
-
+    <p class="date_ticket_show"><?= ($ticketUnique->creationDate() == $ticketUnique->modificationDate() ? "Publié le " . $ticketUnique->creationDate()->format("d/m/Y à H\hi") : "Publié le " . $ticketUnique->creationDate()->format("d/m/Y à H\hi") . " | Modifié le " . $ticketUnique->modificationDate()->format("d/m/Y à H\hi")) ?></p>
 </div>
-    <?php
+<?php
 }
 ?>
 

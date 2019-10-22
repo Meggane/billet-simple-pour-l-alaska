@@ -1,9 +1,7 @@
 <?php
 session_start();
-
 $titlePage = "Mentions Légales";
 $titleSocialNetworks = "Billet simple pour l'Alaska - Mentions Légales";
-$bodyPage = "";
 
 require_once __DIR__ . "/../../page.php";
 ?>

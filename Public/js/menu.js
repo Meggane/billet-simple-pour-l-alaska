@@ -7,5 +7,3 @@ class Menu {
         }
     }
 }
-
-let menu = new Menu();

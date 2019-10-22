@@ -3,20 +3,19 @@ class Tickets {
         tinyMCE.init({
             mode: "exact",
             elements: "content_insert_ticket",
-
             plugins: [
-                "advlist autolink lists link image charmap print preview anchor",
-                "searchreplace visualblocks code fullscreen",
-                "insertdatetime media table paste imagetools wordcount"
+                "advlist autolink lists link image charmap print preview",
+                "searchreplace code fullscreen quickbars",
+                "media table paste imagetools wordcount help"
             ],
-            toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
+            toolbar: "insertfile undo redo | styleselect | fontselect | fontsizeselect | bold italic underline | forecolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
             content_css: [
                 '//fonts.googleapis.com/css?family=Lato:300,300i,400,400i',
                 '//www.tiny.cloud/css/codepen.min.css'
             ],
-
+            paste_data_images: true,
             image_title: true,
-            automatic_uploads: true,
+            image_description: false,
             file_picker_types: "image",
             file_picker_callback: function (cb, value, meta) {
                 var input = document.createElement('input');
@@ -33,12 +32,10 @@ class Tickets {
                         var base64 = reader.result.split(',')[1];
                         var blobInfo = blobCache.create(id, file, base64);
                         blobCache.add(blobInfo);
-
                         cb(blobInfo.blobUri(), { title: file.name });
                     };
                     reader.readAsDataURL(file);
                 };
-
                 input.click();
             }
         });

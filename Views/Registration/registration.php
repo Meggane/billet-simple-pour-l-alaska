@@ -8,7 +8,7 @@ $incorrectPasswordName = "incorrect_password";
 <div id="registration_form">
     <div class="container">
         <div class="row main">
-            <div class="main-login main-center">
+            <div class="presentation_forms_paysage main-login main-center">
                 <form class="form-horizontal" method="post" action="../../Controller/UsersController.php">
                     <a class="closebtn_form" href="javascript:void(0)" id="closebtn" onclick="form.closeFormRegistration()">&times;</a>
                     <h2 class="title_form">Inscription</h2>
@@ -26,7 +26,7 @@ $incorrectPasswordName = "incorrect_password";
                         </div>
                     </div>
 
-                    <div class="form-group">
+                    <div id="email_registration" class="form-group">
                         <label for="email" class="cols-sm-2 control-label">Email</label>
                         <div class="cols-sm-10">
                             <div class="input-group">
@@ -37,7 +37,7 @@ $incorrectPasswordName = "incorrect_password";
                         </div>
                     </div>
 
-                    <div class="form-group ">
+                    <div id="submit_registration" class="form-group ">
                         <input id="tag_registration_submit" type="submit" class="btn btn-primary btn-lg btn-block login-button" value="Je m'inscris">
                     </div>
                 </form>

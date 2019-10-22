@@ -7,7 +7,7 @@
                 <p class="a_propos_index">Découvrez chapitre après chapitre les aventures de Teddy, un garçon solitaire perdu dans la terre impitoyable de l'Alaska.</p>
                 <p class="a_propos_index">Un jour de Novembre, Teddy décida de se lancer dans une aventure extraordinaire : parcourir l'Alaska. <br>
                     Mais son voyage ne fut pas aussi facile qu'il le pensait.<br>
-                    Entre découverte, survie et .... son périple vous réserve bien des surprises...</p>
+                    Entre découverte, survie et coups de théâtre son périple vous réserve bien des surprises...</p>
             </div>
             <div class="col-lg-3">
                 <h5>ME CONTACTER</h5>

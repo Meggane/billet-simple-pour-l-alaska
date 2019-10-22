@@ -1,18 +1,14 @@
 <?php
 session_start();
-
 $titlePage = "Liste des signalements des commentaires";
 $titleSocialNetworks = "Liste des signalements des commentaires";
-$bodyPage = "";
 
 require_once __DIR__ . "/../../Controller/pageController.php";
 include __DIR__ . "/../../Controller/variableController.php";
 require_once __DIR__ . "/../../page.php";
 
 if (isset($_SESSION["login"]) && $_SESSION["admin"] == 1) {
-
     $reportsList = $reports->getAll();
-    $comments = new CommentsManagerPDO($db);
     ?>
 
     <nav id="nav_showReports" class="nav_pages">
@@ -39,7 +35,7 @@ if (isset($_SESSION["login"]) && $_SESSION["admin"] == 1) {
                             </div>
                             <div class="col-md-10">
                                 <p>
-                                    <a class="float-left" href="#"><strong><?= $report->pseudo() ?></strong></a>
+                                    <a id="pseudo_show_reports" class="float-left" href="#"><strong><?= $report->pseudo() ?></strong></a>
                                 </p>
                                 <div class="clearfix"></div>
                                 <p><?= $report->message() ?></p>

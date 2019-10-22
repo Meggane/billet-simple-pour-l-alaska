@@ -1,9 +1,7 @@
 <?php
 session_start();
-
 $titlePage = "Livre";
 $titleSocialNetworks = "Billet simple pour l'Alaska - Livre";
-$bodyPage = "";
 
 require_once __DIR__ . "/../../Controller/pageController.php";
 include __DIR__ . "/../../Controller/variableController.php";
@@ -24,10 +22,6 @@ if (isset($_SESSION["admin"]) && $_SESSION["admin"] == 1) {
 
 <?php
 }
-?>
-
-
-<?php
 
 if (isset($_GET["id"])) {
 ?>
@@ -55,7 +49,17 @@ if (isset($_GET["id"])) {
         <div class="tickets">
             <h1><a class="ticket_title" href="../Tickets/show.php?id=<?= $ticket->id() ?>"><?= $ticket->title() ?></a></h1>
             <p class="ticket_border"></p>
-            <p class="ticket_content"><?= nl2br($ticket->content()) ?></p>
+            <p class="ticket_content">
+                <?php
+                if (strlen($ticket->content()) > 1000) {
+                    $characterLimit = substr($ticket->content(), 0, 1000);
+                    $lastWord = strrpos($characterLimit, " ");
+                    $ticketCharacterLimit = substr($characterLimit, 0, $lastWord);
+                    echo nl2br($ticketCharacterLimit);
+                    echo "...";
+                }
+                ?>
+            </p>
             <p class="link_ticket_admin">
                 <?= ($ticket->creationDate() == $ticket->modificationDate() ? "Publié le " . $ticket->creationDate()->format('d/m/Y à H\hi') : "Publié le " . $ticket->creationDate()->format('d/m/Y à H\hi') . " | Modifié le " . $ticket->modificationDate()->format('d/m/Y à H\hi'));
 

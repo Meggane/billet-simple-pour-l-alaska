@@ -1,5 +1,4 @@
 <?php
-
 require_once "Entity.php";
 
 class Comment extends Entity {

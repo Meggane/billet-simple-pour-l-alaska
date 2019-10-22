@@ -1,9 +1,7 @@
 <?php
-
 require_once "TicketsManager.php";
 
 class TicketsManagerPDO extends TicketsManager {
-
 	protected $db;
 
 	public function __construct(PDO $db) {
@@ -11,7 +9,7 @@ class TicketsManagerPDO extends TicketsManager {
 	}
 
 	protected function add(Tickets $ticket) {
-		$req = $this->db->prepare("INSERT INTO tickets(title, content, creationDate, modificationDate) VALUES (:title, :content, NOW(), NOW())"); // requêtes préparées sont plus sécurisé au niveau des attaques XSS
+		$req = $this->db->prepare("INSERT INTO tickets(title, content, creationDate, modificationDate) VALUES (:title, :content, NOW(), NOW())");
 
 		$req->bindValue(":title", $ticket->title());
 		$req->bindValue(":content", $ticket->content());
@@ -51,7 +49,7 @@ class TicketsManagerPDO extends TicketsManager {
 		$req->bindValue(":id", (int) $id, PDO::PARAM_INT);
 		$req->execute();
 
-		$req->setFetchMode(PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE, "Tickets"); //retourne une instance de la classe Tickets et les colonnes sélectionnées sont donc liées aux attributs de la classe
+		$req->setFetchMode(PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE, "Tickets");
 
 		$ticket = $req->fetch();
 

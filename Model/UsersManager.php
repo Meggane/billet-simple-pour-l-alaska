@@ -1,5 +1,4 @@
 <?php
-
 require_once __DIR__ . "/Manager.php";
 require_once __DIR__ . "/Users.php";
 
@@ -16,10 +15,11 @@ abstract class UsersManager extends Manager {
 		}
 	}
 
-	// recover comment specific of the list
 	abstract public function get($login);
 
     abstract public function getAllEmail($email);
 
 	abstract public function modify(Users $users);
+
+	abstract public function updatePassword($id);
 }

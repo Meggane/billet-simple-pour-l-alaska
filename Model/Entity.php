@@ -1,11 +1,6 @@
 <?php
 
-require_once "Hydrator.php";
-
 abstract class Entity {
-
-	use Hydrator;
-
 	protected $errors = [],
 			  $id;
 
@@ -14,6 +9,16 @@ abstract class Entity {
 			$this->hydrate($data);
 		}
 	}
+
+    public function hydrate($data) {
+        foreach ($data as $key => $value) {
+            $method = "set" . ucfirst($key);
+
+            if (is_callable([$this, $method])) {
+                $this->$method($value);
+            }
+        }
+    }
 
 	public function isNew() {
 		return empty($this->id);

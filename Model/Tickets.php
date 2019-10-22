@@ -1,5 +1,4 @@
 <?php
-
 require_once "Entity.php";
 
 class Tickets extends Entity {
@@ -14,9 +13,6 @@ class Tickets extends Entity {
 	public function isValid() {
 		return !(empty($this->title) || empty($this->content));
 	}
-
-
-	// SETTERS
 
 	public function setTitle($title) {
 		if (!is_string($title) || empty($title)) {
@@ -41,9 +37,6 @@ class Tickets extends Entity {
 	public function setModificationDate(DateTime $modificationDate) {
 		$this->modificationDate = $modificationDate;
 	}
-
-
-	// GETTERS
 
 	public function title() {
 		return $this->title;

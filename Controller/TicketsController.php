@@ -1,6 +1,4 @@
 <?php
-
-require_once __DIR__ . "/pageController.php";
 require_once __DIR__ . "/BackController.php";
 
 class TicketsController extends BackController {
@@ -12,29 +10,21 @@ class TicketsController extends BackController {
     public function insertTicket() {
         include __DIR__ . "/variableController.php";
 
-        if (isset($_POST['title']) && isset($_POST['content']))
-        {
-            $ticket = new Tickets(
-                [
+        if (isset($_POST['title']) && isset($_POST['content'])) {
+            $ticket = new Tickets([
                     'title' => htmlspecialchars($_POST['title']),
                     'content' => $_POST['content']
-                ]
-            );
+                ]);
 
-            if (isset($_POST['id']))
-            {
+            if (isset($_POST['id'])) {
                 $ticket->setId(htmlspecialchars($_POST['id']));
             }
 
-            if ($ticket->isValid())
-            {
+            if ($ticket->isValid()) {
                 $tickets->save($ticket);
                 header("Location: ../Views/Pages/book.php");
                 exit();
-            }
-            else
-            {
-                //$errors = $ticket->errors();
+            } else {
                 header("Location: " . $_SERVER["HTTP_REFERER"]);
                 exit();
             }
@@ -44,8 +34,7 @@ class TicketsController extends BackController {
     public function deleteTicket() {
         include __DIR__ . "/variableController.php";
 
-        if (isset($_GET['supprimer']))
-        {
+        if (isset($_GET['supprimer'])) {
             $tickets->delete(htmlspecialchars((int) $_GET['supprimer']));
             $comments->deleteFromTickets(htmlspecialchars((int) $_GET['supprimer']));
             $reports->deleteFromTickets(htmlspecialchars((int) $_GET['supprimer']));
@@ -53,6 +42,4 @@ class TicketsController extends BackController {
     }
 }
 
-$ticketsController = new TicketsController("PDO", PDOFactory::getMysqlConnexion());
-$ticketsController->insertTicket();
-$ticketsController->deleteTicket();
+require_once __DIR__ . "/pageController.php";
