@@ -51,12 +51,14 @@ if (isset($_GET["id"])) {
             <p class="ticket_border"></p>
             <p class="ticket_content">
                 <?php
-                if (strlen($ticket->content()) > 1000) {
-                    $characterLimit = substr($ticket->content(), 0, 1000);
+                if (strlen($ticket->content()) > 1500) {
+                    $characterLimit = substr($ticket->content(), 0, 1500);
                     $lastWord = strrpos($characterLimit, " ");
                     $ticketCharacterLimit = substr($characterLimit, 0, $lastWord);
                     echo nl2br($ticketCharacterLimit);
                     echo "...";
+                } else {
+                    echo nl2br($ticket->content());
                 }
                 ?>
             </p>

@@ -288,7 +288,7 @@ footer h5 {
 
 #connexion_form {
 	visibility: hidden;
-	margin-top: 100px;
+	margin-top: 70px;
 }
 
 #registration_link, #connexion_link {
@@ -374,7 +374,7 @@ footer h5 {
 .input_form_comment {
 	height: 30px;
 	border: 1px #9A9EA2 solid;
-	font-size: 1.4em;
+	font-size: 18.4px;
 }
 
 .textarea_form_comment, .input_form_comment {
@@ -501,7 +501,7 @@ footer h5 {
 	visibility: hidden;
 	position: fixed;
 	left: 12%;
-    top: 10%;
+    top: 5%;
 	bottom: 100px;
 	z-index: 2;
 }
