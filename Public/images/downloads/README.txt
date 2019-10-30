@@ -1,0 +1,1 @@
+#This folder will contain the local images used during tickets creation
