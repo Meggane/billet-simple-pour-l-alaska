@@ -11,7 +11,7 @@ foreach ($commentList as $comment) {
             <div class="card-body">
                 <div class="row">
                     <div class="presentation_comment_form col-md-2">
-                        <img src="https://image.ibb.co/jw55Ex/def_face.jpg" class="img img-rounded img-fluid"/>
+                        <img src="../../Public/images/avatar.jpg" class="img img-rounded img-fluid"/>
                         <p id="commentPost" class="text-secondary text-center">Posté le <?= $comment->publicationDate()->format("d/m/Y à H:i") ?></p>
                     </div>
                     <div class="col-md-10">

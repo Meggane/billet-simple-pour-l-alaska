@@ -19,7 +19,7 @@ $comment = $comments->get(htmlspecialchars((int) $_GET["id"]));
         <div class="card-body">
             <div class="row">
                 <div class="add_report_presentation col-md-2 col-sm-4 col-xs-4">
-                    <img src="https://image.ibb.co/jw55Ex/def_face.jpg" class="img img-rounded img-fluid"/>
+                    <img src="../../Public/images/avatar.jpg" class="img img-rounded img-fluid"/>
                     <p id="commentPost" class="text-secondary text-center">Posté le <?= $comment->publicationDate()->format("d/m/Y à H\hi") ?></p>
                 </div>
                 <div class="add_report_presentation col-md-10 col-sm-8 col-xs-8">

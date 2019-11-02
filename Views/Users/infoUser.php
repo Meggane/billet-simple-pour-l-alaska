@@ -15,7 +15,7 @@ if (isset($_SESSION["login"])) {
     <div id="info_user" class="container-fluid well span6">
         <div class="row-fluid">
             <div class="info_user_presentation col-lg-2 col-sm-4 col-xs-12" >
-                <img src="https://image.ibb.co/jw55Ex/def_face.jpg" class="img-circle">
+                <img src="../../Public/images/avatar.jpg" class="img-circle">
             </div>
 
             <div class="info_user_presentation col-lg-8 col-sm-4 col-xs-12">
