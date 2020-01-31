@@ -40,9 +40,7 @@ if (isset($_SESSION["login"]) && $_SESSION["admin"] == 1) {
                                 <div class="clearfix"></div>
                                 <p><?= $report->message() ?></p>
                                 <p>
-                                    <a id="btn_delete_show_reports" href="?delete=<?= $report->id() ?>"
-                                       class="float-right btn btn-outline-primary ml-2"> <i
-                                                class="fas fa-trash-alt"></i> Supprimer</a>
+                                    <a id="btn_delete_show_reports" href="?delete=<?= $report->id() ?>" class="float-right btn btn-outline-danger ml-2"> <i class="fas fa-trash-alt"></i> Supprimer</a>
                                 </p>
                                 <p>
                                     <a id="btn_show_com_show_reports"

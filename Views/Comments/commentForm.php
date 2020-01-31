@@ -24,7 +24,7 @@ foreach ($commentList as $comment) {
                             <?php
                             if (isset($_SESSION["admin"]) && $_SESSION["admin"] == 1) {
                             ?>
-                            <a id="btn_delete_comment_ticket" href="?delete=<?= $comment->id() ?>" class="btn_comment_ticket float-right btn btn-outline-primary ml-2"> <i class="fas fa-trash-alt"></i> Supprimer</a>
+                            <a id="btn_delete_comment_ticket" href="?delete=<?= $comment->id() ?>" class="btn_comment_ticket float-right btn btn-outline-danger ml-2"> <i class="fas fa-trash-alt"></i> Supprimer</a>
                             <?php
                             }
                             ?>

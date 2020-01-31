@@ -483,12 +483,26 @@ footer h5 {
 }
 
 #btn_delete_show_reports, #btn_show_com_show_reports {
-	border: 1px #1F85DE solid;
 	font-size: 0.8em;
+}
+
+#btn_delete_show_reports, #btn_delete_comment_ticket {
+	border: 1px #C83030 solid;
+}
+
+#btn_show_com_show_reports {
+	border: 1px #1F85DE solid;
 }
 
 #btn_delete_show_reports:hover, #btn_show_com_show_reports:hover {
 	color: #FFF;
+}
+
+#btn_delete_show_reports:hover, #btn_delete_comment_ticket:hover {
+	background-color: #C83030;
+}
+
+#btn_show_com_show_reports:hover {
 	background-color: #1F85DE;
 }
 
