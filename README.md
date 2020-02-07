@@ -76,4 +76,4 @@ CREATE TABLE IF NOT EXISTS `users` (
   UNIQUE KEY `email` (`email`)
 ) ENGINE=MyISAM AUTO_INCREMENT=158 DEFAULT CHARSET=utf8;
 
-Then, edit PHPFactory.php file with the elements concerning your database.
+Then, edit PHPFactory.php file with the elements concerning your database. Create a user that you will pass an administrator in the database directly in the “admin” field like this : 1.
